@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -95,13 +96,16 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	return nil
 }
 
-func getData(key string) interface{} {
+func getData(key string) (interface{}, error) {
 	dkr, err := anc.AddressesDataKey(anoteAddress, key)
 	if err != nil {
-		// log.Println(err.Error())
-		return nil
+		if strings.Contains(fmt.Sprintf("%s", err.Error()), "304") {
+			return nil, nil
+		} else {
+			return nil, err
+		}
 	}
-	return dkr.Value
+	return dkr.Value, nil
 }
 
 func prettyPrint(i interface{}) string {
