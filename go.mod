@@ -3,7 +3,7 @@ module aint-gateway
 go 1.17
 
 require (
-	github.com/anonutopia/gowaves v1.0.26
+	github.com/anonutopia/gowaves v1.0.27
 	github.com/wavesplatform/gowaves v0.9.0
 )
 

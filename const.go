@@ -21,4 +21,10 @@ const (
 
 	// Separator for the key / value strings
 	Sep = "__"
+
+	// TypeAnote represents Anote blockchain as a string
+	TypeAnote = "ANOTE"
+
+	// TypeWaves represents Waves blockchain as a string
+	TypeWaves = "WAVES"
 )

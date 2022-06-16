@@ -5,14 +5,15 @@ import (
 	"time"
 
 	"github.com/anonutopia/gowaves"
+	"github.com/mr-tron/base58"
 )
 
 type Monitor struct {
 	StartedTime int64
 }
 
-func (wm *Monitor) start() {
-	wm.StartedTime = time.Now().Unix() * 1000
+func (m *Monitor) start() {
+	m.StartedTime = time.Now().Unix() * 1000
 	for {
 		// todo - make sure that everything is ok with 100 here
 		pages, err := gowaves.WNC.TransactionsAddressLimit(wavesAddress, 100)
@@ -22,7 +23,7 @@ func (wm *Monitor) start() {
 
 		if len(pages) > 0 {
 			for _, t := range pages[0] {
-				wm.checkTransactionWaves(&t)
+				m.checkTransaction(&t, TypeWaves)
 			}
 		}
 
@@ -33,7 +34,7 @@ func (wm *Monitor) start() {
 
 		if len(pages) > 0 {
 			for _, t := range pages[0] {
-				wm.checkTransactionWaves(&t)
+				m.checkTransaction(&t, TypeAnote)
 			}
 		}
 
@@ -41,14 +42,43 @@ func (wm *Monitor) start() {
 	}
 }
 
-func (m *Monitor) checkTransactionWaves(talr *gowaves.TransactionsAddressLimitResponse) {
-	// log.Printf("%+v\n", talr)
-	log.Println(prettyPrint(talr))
+func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitResponse, blockchain string) {
+	if (talr.Recipient == wavesAddress && talr.AssetID == AnoteWavesId) ||
+		(talr.Recipient == anoteAddress && talr.AssetID == "") {
+		key := blockchain + Sep + talr.ID
+		data := getData(key)
+
+		if data == nil || !data.(bool) {
+			done := true
+			dataTransaction(key, nil, nil, &done)
+
+			if len(talr.Attachment) > 0 {
+				m.processTransaction(talr, blockchain)
+			}
+		}
+	}
 }
 
-func (m *Monitor) checkTransactionAnote(talr *gowaves.TransactionsAddressLimitResponse) {
-	// log.Printf("%+v\n", talr)
-	log.Println(prettyPrint(talr))
+func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitResponse, blockchain string) {
+	var assetId string
+
+	recipient, err := base58.Decode(talr.Attachment)
+	if err != nil {
+		log.Println(err.Error())
+	}
+	recAddress := string(recipient[:])
+
+	if blockchain == TypeWaves {
+		assetId = ""
+	} else {
+		assetId = AnoteWavesId
+	}
+
+	log.Println(recAddress)
+
+	sendAsset(uint64(talr.Amount), assetId, recAddress)
+
+	log.Println("Sent.")
 }
 
 func initMonitor() {
