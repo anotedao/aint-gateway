@@ -122,8 +122,6 @@ func sendAsset(amount uint64, assetId string, recipient string) error {
 		nodeURL = WavesNodeURL
 	}
 
-	log.Println(networkByte)
-
 	// Create sender's public key from BASE58 string
 	sender, err := crypto.NewPublicKeyFromBase58(conf.PublicKey)
 	if err != nil {

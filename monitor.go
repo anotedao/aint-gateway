@@ -74,8 +74,6 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		assetId = AnoteWavesId
 	}
 
-	log.Println(recAddress)
-
 	sendAsset(uint64(talr.Amount), assetId, recAddress)
 
 	log.Println("Sent.")
