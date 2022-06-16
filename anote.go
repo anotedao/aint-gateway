@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"time"
 
 	"github.com/anonutopia/gowaves"
+	"github.com/wavesplatform/gowaves/pkg/crypto"
+	"github.com/wavesplatform/gowaves/pkg/proto"
 )
 
 func initAnote() *gowaves.WavesNodeClient {
@@ -14,20 +14,11 @@ func initAnote() *gowaves.WavesNodeClient {
 		Port: 6869,
 	}
 
-	a, err := anc.Addresses()
-	if err != nil {
-		log.Println(err.Error())
-		for err != nil {
-			time.Sleep(time.Second * 10)
-			a, err = anc.Addresses()
-			if err != nil {
-				log.Println(err.Error())
-			}
-		}
-	}
+	pk, _ := crypto.NewPublicKeyFromBase58(conf.PublicKey)
 
-	ar := *a
-	anoteAddress = ar[0]
+	a, _ := proto.NewAddressFromPublicKey(55, pk)
+
+	anoteAddress = a.String()
 
 	fmt.Printf("Anote Address: %s\n", anoteAddress)
 
