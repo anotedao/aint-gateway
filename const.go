@@ -12,4 +12,13 @@ const (
 
 	// Fee is regular fee amount
 	Fee = 100000
+
+	// MonitorTick interval in seconds
+	MonitorTick = 10
+
+	// Anote token id in Waves blockchain
+	AnoteWavesId = "2KenQMmMmNWfNsVAXghYhH74BN6kRJGWfhgjo7S418NF"
+
+	// Separator for the key / value strings
+	Sep = "__"
 )

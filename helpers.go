@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"log"
 	"net/http"
 	"time"
@@ -78,4 +79,17 @@ func dataTransaction(key string, valueStr *string, valueInt *int64) error {
 	}
 
 	return nil
+}
+
+func getData(key string) interface{} {
+	dkr, err := anc.AddressesDataKey(anoteAddress, key)
+	if err != nil {
+		log.Println(err.Error())
+	}
+	return dkr.Value
+}
+
+func prettyPrint(i interface{}) string {
+	s, _ := json.MarshalIndent(i, "", "\t")
+	return string(s)
 }
