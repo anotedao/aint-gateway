@@ -44,7 +44,9 @@ func (m *Monitor) start() {
 
 func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitResponse, blockchain string) {
 	if (talr.Recipient == wavesAddress && talr.AssetID == AnoteWavesId) ||
-		(talr.Recipient == anoteAddress && talr.AssetID == "") {
+		(talr.Recipient == anoteAddress && talr.AssetID == "") ||
+		(talr.Recipient == wavesAddress && talr.AssetID == AintWavesId) ||
+		(talr.Recipient == anoteAddress && talr.AssetID == AintAnoteId) {
 		key := blockchain + Sep + talr.ID
 		data, err := getData(key)
 
@@ -69,9 +71,17 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 	recAddress := string(recipient[:])
 
 	if blockchain == TypeWaves {
-		assetId = ""
+		if talr.AssetID == AnoteWavesId {
+			assetId = ""
+		} else {
+			assetId = AintAnoteId
+		}
 	} else {
-		assetId = AnoteWavesId
+		if talr.AssetID == "" {
+			assetId = AnoteWavesId
+		} else {
+			assetId = AintWavesId
+		}
 	}
 
 	sendAsset(uint64(talr.Amount), assetId, recAddress)
