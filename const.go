@@ -17,7 +17,7 @@ const (
 	MonitorTick = 10
 
 	// Anote token id in Waves blockchain
-	AnoteWavesId = "2KenQMmMmNWfNsVAXghYhH74BN6kRJGWfhgjo7S418NF"
+	AnoteWavesId = "7AcLk4rV8yZ3rEUyzYHutgVyKR5GYjPFz2MGKCrHnN25"
 
 	// AINT token id in Waves blockchain
 	AintWavesId = "66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv"

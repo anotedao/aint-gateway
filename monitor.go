@@ -84,7 +84,7 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		}
 	}
 
-	sendAsset(uint64(talr.Amount), assetId, recAddress)
+	sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
 
 	log.Println("Sent.")
 }

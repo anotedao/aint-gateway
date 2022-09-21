@@ -9,6 +9,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mr-tron/base58/base58"
 	"github.com/wavesplatform/gowaves/pkg/client"
 	"github.com/wavesplatform/gowaves/pkg/crypto"
 	"github.com/wavesplatform/gowaves/pkg/proto"
@@ -113,7 +114,7 @@ func prettyPrint(i interface{}) string {
 	return string(s)
 }
 
-func sendAsset(amount uint64, assetId string, recipient string) error {
+func sendAsset(amount uint64, assetId string, recipient string, attachment string) error {
 	var networkByte byte
 	var nodeURL string
 	var assetBytes []byte
@@ -167,7 +168,13 @@ func sendAsset(amount uint64, assetId string, recipient string) error {
 		return err
 	}
 
-	tr := proto.NewUnsignedTransferWithSig(sender, *asset, *assetW, uint64(ts), amount, Fee, proto.Recipient{Address: &rec}, nil)
+	att, err := proto.NewAttachmentFromBase58(base58.Encode([]byte(attachment)))
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	tr := proto.NewUnsignedTransferWithSig(sender, *asset, *assetW, uint64(ts), amount, Fee, proto.Recipient{Address: &rec}, att)
 
 	err = tr.Sign(networkByte, sk)
 	if err != nil {
