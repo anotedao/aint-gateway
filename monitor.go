@@ -19,6 +19,7 @@ func (m *Monitor) start() {
 		pages, err := gowaves.WNC.TransactionsAddressLimit(wavesAddress, 100)
 		if err != nil {
 			log.Println(err)
+			logTelegram(err.Error())
 		}
 
 		if len(pages) > 0 {
@@ -30,6 +31,7 @@ func (m *Monitor) start() {
 		pages, err = anc.TransactionsAddressLimit(anoteAddress, 100)
 		if err != nil {
 			log.Println(err)
+			logTelegram(err.Error())
 		}
 
 		if len(pages) > 0 {
@@ -67,6 +69,7 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 	recipient, err := base58.Decode(talr.Attachment)
 	if err != nil {
 		log.Println(err.Error())
+		logTelegram(err.Error())
 	}
 	recAddress := string(recipient[:])
 

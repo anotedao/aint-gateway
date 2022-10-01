@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"path"
+	"runtime"
 	"strings"
 	"time"
 
@@ -20,6 +22,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	sender, err := crypto.NewPublicKeyFromBase58(conf.PublicKey)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -27,6 +30,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	sk, err := crypto.NewSecretKeyFromBase58(conf.PrivateKey)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -73,6 +77,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	err = tr.Sign(55, sk)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -80,6 +85,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	cl, err := client.NewClient(client.Options{BaseUrl: AnoteNodeURL, Client: &http.Client{}})
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -91,6 +97,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	_, err = cl.Transactions.Broadcast(ctx, tr)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -131,6 +138,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	sender, err := crypto.NewPublicKeyFromBase58(conf.PublicKey)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -138,6 +146,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	sk, err := crypto.NewSecretKeyFromBase58(conf.PrivateKey)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -153,24 +162,28 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	asset, err := proto.NewOptionalAssetFromBytes(assetBytes)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
 	assetW, err := proto.NewOptionalAssetFromBytes([]byte{})
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
 	rec, err := proto.NewAddressFromString(recipient)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
 	att, err := proto.NewAttachmentFromBase58(base58.Encode([]byte(attachment)))
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -179,6 +192,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	err = tr.Sign(networkByte, sk)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -186,6 +200,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	client, err := client.NewClient(client.Options{BaseUrl: nodeURL, Client: &http.Client{}})
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
@@ -197,8 +212,35 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	_, err = client.Transactions.Broadcast(ctx, tr)
 	if err != nil {
 		log.Println(err)
+		logTelegram(err.Error())
 		return err
 	}
 
 	return nil
+}
+
+func getCallerInfo() (info string) {
+
+	// pc, file, lineNo, ok := runtime.Caller(2)
+	_, file, lineNo, ok := runtime.Caller(2)
+	if !ok {
+		info = "runtime.Caller() failed"
+		return
+	}
+	// funcName := runtime.FuncForPC(pc).Name()
+	fileName := path.Base(file) // The Base function returns the last element of the path
+	return fmt.Sprintf("%s:%d: ", fileName, lineNo)
+}
+
+func logTelegram(message string) {
+	message = "aint-gateway:" + getCallerInfo() + message
+
+	_, err := http.Get(fmt.Sprintf("http://localhost:5002/log/%s", message))
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+		logTelegram(err.Error())
+		logTelegram(err.Error())
+		logTelegram(err.Error())
+	}
 }
