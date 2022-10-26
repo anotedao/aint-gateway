@@ -65,6 +65,7 @@ func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitRespons
 			done := true
 			dataTransaction(key, nil, nil, &done)
 
+			t.TxID = talr.ID
 			t.Processed = true
 			t.Type = blockchain
 			db.Save(t)

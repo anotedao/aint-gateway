@@ -168,7 +168,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 		return err
 	}
 
-	assetW, err := proto.NewOptionalAssetFromBytes([]byte{})
+	assetW, err := proto.NewOptionalAssetFromString("")
 	if err != nil {
 		log.Println(err)
 		logTelegram(err.Error())
