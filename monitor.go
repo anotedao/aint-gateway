@@ -58,9 +58,16 @@ func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitRespons
 		key := blockchain + Sep + talr.ID
 		data, err := getData(key)
 
-		if err == nil && (data == nil || !data.(bool)) {
+		t := &Transaction{}
+		db.First(t, &Transaction{TxID: talr.ID})
+
+		if err == nil && (data == nil || !data.(bool)) && t.ID == 0 && !t.Processed {
 			done := true
 			dataTransaction(key, nil, nil, &done)
+
+			t.Processed = true
+			t.Type = blockchain
+			db.Save(t)
 
 			if len(talr.Attachment) > 0 {
 				m.processTransaction(talr, blockchain)
@@ -93,10 +100,8 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		}
 	}
 
-	// sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
-	log.Printf("%d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
-
-	log.Println("Sent.")
+	sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+	log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 }
 
 func (m *Monitor) loadTransactions() {

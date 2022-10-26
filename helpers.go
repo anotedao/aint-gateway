@@ -92,7 +92,7 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	}
 
 	// Context to cancel the request execution on timeout
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
 	// // Send the transaction to the network
@@ -207,7 +207,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	}
 
 	// Context to cancel the request execution on timeout
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
 	// // Send the transaction to the network
