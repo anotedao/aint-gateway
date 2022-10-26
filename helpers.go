@@ -38,7 +38,8 @@ func dataTransaction(key string, valueStr *string, valueInt *int64, valueBool *b
 	// Current time in milliseconds
 	ts := time.Now().Unix() * 1000
 
-	tr := proto.NewUnsignedData(2, sender, Fee, uint64(ts))
+	// tr := proto.NewUnsignedData(2, sender, Fee, uint64(ts))
+	tr := proto.NewUnsignedDataWithProofs(2, sender, Fee, uint64(ts))
 
 	if valueStr == nil && valueInt == nil && valueBool == nil {
 		tr.Entries = append(tr.Entries,

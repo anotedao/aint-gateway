@@ -1,11 +1,17 @@
 package main
 
 import (
+	"context"
 	"log"
+	"net/http"
+	"strings"
 	"time"
 
 	"github.com/anonutopia/gowaves"
 	"github.com/mr-tron/base58"
+	"github.com/wavesplatform/gowaves/pkg/client"
+	"github.com/wavesplatform/gowaves/pkg/crypto"
+	"github.com/wavesplatform/gowaves/pkg/proto"
 )
 
 type Monitor struct {
@@ -87,12 +93,49 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		}
 	}
 
-	sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+	// sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+	log.Printf("%d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 
 	log.Println("Sent.")
 }
 
+func (m *Monitor) loadTransactions() {
+	cl, err := client.NewClient(client.Options{BaseUrl: AnoteNodeURL, Client: &http.Client{}})
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+	}
+
+	// Context to cancel the request execution on timeout
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+	defer cancel()
+
+	sender, err := crypto.NewPublicKeyFromBase58(conf.PublicKey)
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+	}
+
+	addr, err := proto.NewAddressFromPublicKey(55, sender)
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+	}
+
+	data, _, err := cl.Addresses.AddressesData(ctx, addr)
+	for _, de := range data {
+		txid := strings.Split(de.GetKey(), Sep)[1]
+		blockchain := strings.Split(de.GetKey(), Sep)[0]
+		t := &Transaction{TxID: txid}
+		db.FirstOrCreate(t, t)
+		t.Type = blockchain
+		t.Processed = de.ToProtobuf().GetBoolValue()
+		db.Save(t)
+	}
+}
+
 func initMonitor() {
 	m := &Monitor{}
+	go m.loadTransactions()
 	m.start()
 }

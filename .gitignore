@@ -1,3 +1,4 @@
 aint-gateway
 config.json
 deploy.sh
+gateway.db
