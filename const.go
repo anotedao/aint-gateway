@@ -5,7 +5,7 @@ const (
 	SatInBTC = uint64(100000000)
 
 	// AnoteNodeURL is an URL for Anote Node
-	AnoteNodeURL = "https://nodes.anote.digital"
+	AnoteNodeURL = "http://localhost:6869"
 
 	// WavesNodeURL is an URL for Waves Node
 	WavesNodeURL = "https://nodes.wavesnodes.com"
