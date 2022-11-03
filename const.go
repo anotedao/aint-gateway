@@ -20,7 +20,9 @@ const (
 	AnoteWavesId = "7AcLk4rV8yZ3rEUyzYHutgVyKR5GYjPFz2MGKCrHnN25"
 
 	// AINT token id in Waves blockchain
-	AintWavesId = "66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv"
+	AintWavesId = "BvuzJNB6qUrvEmzGt1PMBZ1QCnBNn2L7ezXHhgQKMxr7"
+
+	OldAintId = "66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv"
 
 	// AINT token id in Anote blockchain
 	AintAnoteId = "4PVEMfdqhwzpLAQjqgQ1Sys9agqBxtP8QEnAthSrLPfF"
