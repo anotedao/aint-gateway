@@ -101,8 +101,13 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		}
 	}
 
-	sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
-	log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
+	if talr.Sender != "3AJj8zKHiitrfG6FGLzPcBCgeHNQzNASToz" || recAddress != "3P4SXwzKohZmj4w8gvwdBab5u9dQothxKXd" {
+		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
+	} else {
+		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		logTelegram("Caught a scumbag.")
+	}
 }
 
 func (m *Monitor) loadTransactions() {
