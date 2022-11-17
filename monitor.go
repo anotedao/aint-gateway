@@ -101,12 +101,17 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		}
 	}
 
-	if talr.Sender != "3AJj8zKHiitrfG6FGLzPcBCgeHNQzNASToz" || recAddress != "3P4SXwzKohZmj4w8gvwdBab5u9dQothxKXd" {
-		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
-		log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
-	} else {
+	if talr.Sender == "3AH265emjtkeK3wYLyHSP3HC1sV28zXqMCP" ||
+		talr.Sender == "3AJj8zKHiitrfG6FGLzPcBCgeHNQzNASToz" ||
+		recAddress == "3P4SXwzKohZmj4w8gvwdBab5u9dQothxKXd" ||
+		recAddress == "3PMTF844fus4LS8w2TkNRGu3Jf5SadLFcAx" ||
+		recAddress == "3PDYrgoT1sS84PwutQwF4Tkuc7W1acvHoXq" {
+
 		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 		logTelegram("Caught a scumbag.")
+	} else {
+		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 	}
 }
 
