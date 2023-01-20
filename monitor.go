@@ -29,9 +29,9 @@ func (m *Monitor) start() {
 		}
 
 		if len(pages) > 0 {
-			for _, t := range pages[0] {
-				m.checkTransaction(&t, TypeWaves)
-			}
+			// for _, t := range pages[0] {
+			// 	m.checkTransaction(&t, TypeWaves)
+			// }
 		}
 
 		pages, err = anc.TransactionsAddressLimit(anoteAddress, 100)
@@ -41,9 +41,9 @@ func (m *Monitor) start() {
 		}
 
 		if len(pages) > 0 {
-			for _, t := range pages[0] {
-				m.checkTransaction(&t, TypeAnote)
-			}
+			// for _, t := range pages[0] {
+			// 	m.checkTransaction(&t, TypeAnote)
+			// }
 		}
 
 		time.Sleep(time.Second * MonitorTick)
