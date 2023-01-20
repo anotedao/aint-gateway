@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -29,9 +30,9 @@ func (m *Monitor) start() {
 		}
 
 		if len(pages) > 0 {
-			// for _, t := range pages[0] {
-			// 	m.checkTransaction(&t, TypeWaves)
-			// }
+			for _, t := range pages[0] {
+				m.checkTransaction(&t, TypeWaves)
+			}
 		}
 
 		pages, err = anc.TransactionsAddressLimit(anoteAddress, 100)
@@ -41,9 +42,9 @@ func (m *Monitor) start() {
 		}
 
 		if len(pages) > 0 {
-			// for _, t := range pages[0] {
-			// 	m.checkTransaction(&t, TypeAnote)
-			// }
+			for _, t := range pages[0] {
+				m.checkTransaction(&t, TypeAnote)
+			}
 		}
 
 		time.Sleep(time.Second * MonitorTick)
@@ -115,7 +116,11 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 		logTelegram("Caught a scumbag.")
 	} else {
-		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		if assetId == AintAnoteId || assetId == AintWavesId {
+			sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		} else {
+			logTelegram(fmt.Sprintf("Gateway: %s %s %d", talr.Sender, recAddress, talr.Amount))
+		}
 		log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 	}
 }
