@@ -8,7 +8,7 @@ const (
 	AnoteNodeURL = "http://localhost:6869"
 
 	// WavesNodeURL is an URL for Waves Node
-	WavesNodeURL = "https://nodes.wavesnodes.com"
+	WavesNodeURL = "https://nodes.wavesplatform.com"
 
 	// Fee is regular fee amount
 	Fee = 100000
@@ -25,7 +25,7 @@ const (
 	OldAintId = "66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv"
 
 	// AINT token id in Anote blockchain
-	AintAnoteId = "4PVEMfdqhwzpLAQjqgQ1Sys9agqBxtP8QEnAthSrLPfF"
+	AintAnoteId = "7paojf37ipks5Ac4rHMwtLHHe9YU6w8FBfafwoTEmmf9"
 
 	// Separator for the key / value strings
 	Sep = "__"
