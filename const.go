@@ -14,7 +14,7 @@ const (
 	Fee = 100000
 
 	// MonitorTick interval in seconds
-	MonitorTick = 120
+	MonitorTick = 60
 
 	// Anote token id in Waves blockchain
 	AnoteWavesId = "7AcLk4rV8yZ3rEUyzYHutgVyKR5GYjPFz2MGKCrHnN25"
