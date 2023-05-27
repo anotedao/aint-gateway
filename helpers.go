@@ -237,7 +237,7 @@ func getCallerInfo() (info string) {
 func logTelegram(message string) {
 	message = "aint-gateway:" + getCallerInfo() + url.PathEscape(url.QueryEscape(message))
 
-	_, err := http.Get(fmt.Sprintf("http://localhost:5002/log/%s", message))
+	_, err := http.Get(fmt.Sprintf("http://localhost:5006/log/%s", message))
 	if err != nil {
 		log.Println(err)
 	}
