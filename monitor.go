@@ -21,6 +21,7 @@ type Monitor struct {
 
 func (m *Monitor) start() {
 	m.StartedTime = time.Now().Unix() * 1000
+	gowaves.WNC.Host = WavesNodeURL
 	for {
 		// todo - make sure that everything is ok with 100 here
 		pages, err := gowaves.WNC.TransactionsAddressLimit(wavesAddress, 100)
