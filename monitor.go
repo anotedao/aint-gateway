@@ -117,11 +117,14 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 		logTelegram("Caught a scumbag.")
 	} else {
+		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+
 		if assetId == AintAnoteId || assetId == AintWavesId {
-			sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+			logTelegram(fmt.Sprintf("Gateway AINT: %s %s %d", talr.Sender, recAddress, talr.Amount))
 		} else {
 			logTelegram(fmt.Sprintf("Gateway: %s %s %d", talr.Sender, recAddress, talr.Amount))
 		}
+
 		log.Printf("Sent: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 	}
 }
