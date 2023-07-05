@@ -126,7 +126,7 @@ func prettyPrint(i interface{}) string {
 func sendAsset(amount uint64, assetId string, recipient string, attachment string) error {
 	var networkByte byte
 	var nodeURL string
-	var assetBytes []byte
+	// var assetBytes []byte
 
 	if strings.HasPrefix(recipient, "3A") {
 		networkByte = 55
