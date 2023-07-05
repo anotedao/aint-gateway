@@ -155,13 +155,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 	// Current time in milliseconds
 	ts := time.Now().Unix() * 1000
 
-	if len(assetId) > 0 {
-		assetBytes = crypto.MustBytesFromBase58(assetId)
-	} else {
-		assetBytes = []byte{}
-	}
-
-	asset, err := proto.NewOptionalAssetFromBytes(assetBytes)
+	asset, err := proto.NewOptionalAssetFromString(assetId)
 	if err != nil {
 		log.Println(err)
 		logTelegram(err.Error())
