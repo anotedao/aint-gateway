@@ -19,6 +19,8 @@ const (
 	// Anote token id in Waves blockchain
 	AnoteWavesId = "HqieNeUxTqzMufgF49QvK99h2ShsAuJAGYKvYZrvRejN"
 
+	AnotePrealphaWavesId = "4zbprK67hsa732oSGLB6HzE8Yfdj3BcTcehCeTA1G5Lf"
+
 	// AINT token id in Waves blockchain
 	AintWavesId = "BvuzJNB6qUrvEmzGt1PMBZ1QCnBNn2L7ezXHhgQKMxr7"
 

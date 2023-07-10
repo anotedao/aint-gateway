@@ -92,6 +92,9 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 	if blockchain == TypeWaves {
 		if talr.AssetID == AnoteWavesId {
 			assetId = ""
+		} else if talr.AssetID == AnotePrealphaWavesId {
+			assetId = ""
+			talr.Amount /= 1000
 		} else {
 			assetId = AintAnoteId
 		}
