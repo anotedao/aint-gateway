@@ -56,6 +56,7 @@ func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitRespons
 	if (talr.Recipient == wavesAddress && talr.AssetID == AnoteWavesId) ||
 		(talr.Recipient == anoteAddress && talr.AssetID == "") ||
 		(talr.Recipient == wavesAddress && talr.AssetID == AintWavesId) ||
+		(talr.Recipient == wavesAddress && talr.AssetID == AnotePrealphaWavesId) ||
 		(talr.Recipient == anoteAddress && talr.AssetID == AintAnoteId) {
 		key := blockchain + Sep + talr.ID
 		data, err := getData(key)
