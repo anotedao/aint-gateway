@@ -115,12 +115,14 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		talr.Sender == "3AMKhRz9gy2oAfAiztSFk4LymtmiyKvSUui" ||
 		recAddress == "3P4SXwzKohZmj4w8gvwdBab5u9dQothxKXd" ||
 		recAddress == "3PMTF844fus4LS8w2TkNRGu3Jf5SadLFcAx" ||
+		recAddress == "3PGCBwomcSSHTsugmrQiMqPHSLgab19JNas" ||
 		recAddress == "3PHBLpQmx3jrMxqixYsXZ22F3CVGD8T63bj" ||
 		recAddress == "3PDYrgoT1sS84PwutQwF4Tkuc7W1acvHoXq" {
 
 		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
 		logTelegram("Caught a scumbag.")
 	} else {
+		recAddress = strings.ReplaceAll(strings.ReplaceAll(recAddress, "\n", ""), " ", "")
 		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
 
 		if assetId == AintAnoteId || assetId == AintWavesId {
