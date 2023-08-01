@@ -169,7 +169,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 		return err
 	}
 
-	rec, err := proto.NewAddressFromString(recipient)
+	rec, err := proto.NewRecipientFromString(recipient)
 	if err != nil {
 		log.Println(err)
 		logTelegram(err.Error())
@@ -183,7 +183,7 @@ func sendAsset(amount uint64, assetId string, recipient string, attachment strin
 		return err
 	}
 
-	tr := proto.NewUnsignedTransferWithSig(sender, *asset, *assetW, uint64(ts), amount, Fee, proto.Recipient{Address: &rec}, att)
+	tr := proto.NewUnsignedTransferWithSig(sender, *asset, *assetW, uint64(ts), amount, Fee, rec, att)
 
 	err = tr.Sign(networkByte, sk)
 	if err != nil {
