@@ -137,7 +137,7 @@ func bindMain(address common.Address, caller bind.ContractCaller, transactor bin
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Main *MainRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+func (_Main *MainRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
 	return _Main.Contract.MainCaller.contract.Call(opts, result, method, params...)
 }
 
@@ -156,7 +156,7 @@ func (_Main *MainRaw) Transact(opts *bind.TransactOpts, method string, params ..
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Main *MainCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+func (_Main *MainCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
 	return _Main.Contract.contract.Call(opts, result, method, params...)
 }
 
@@ -175,12 +175,17 @@ func (_Main *MainTransactorRaw) Transact(opts *bind.TransactOpts, method string,
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
 func (_Main *MainCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
-	var (
-		ret0 = new([32]byte)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "DEFAULT_ADMIN_ROLE")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
 }
 
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
@@ -201,12 +206,17 @@ func (_Main *MainCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
 func (_Main *MainCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
-	var (
-		ret0 = new([32]byte)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "MINTER_ROLE")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "MINTER_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
 }
 
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
@@ -227,12 +237,17 @@ func (_Main *MainCallerSession) MINTERROLE() ([32]byte, error) {
 //
 // Solidity: function PAUSER_ROLE() view returns(bytes32)
 func (_Main *MainCaller) PAUSERROLE(opts *bind.CallOpts) ([32]byte, error) {
-	var (
-		ret0 = new([32]byte)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "PAUSER_ROLE")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "PAUSER_ROLE")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
 }
 
 // PAUSERROLE is a free data retrieval call binding the contract method 0xe63ab1e9.
@@ -253,12 +268,17 @@ func (_Main *MainCallerSession) PAUSERROLE() ([32]byte, error) {
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
 func (_Main *MainCaller) Allowance(opts *bind.CallOpts, owner common.Address, spender common.Address) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "allowance", owner, spender)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "allowance", owner, spender)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
@@ -279,12 +299,17 @@ func (_Main *MainCallerSession) Allowance(owner common.Address, spender common.A
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
 func (_Main *MainCaller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "balanceOf", account)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "balanceOf", account)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
@@ -305,12 +330,17 @@ func (_Main *MainCallerSession) BalanceOf(account common.Address) (*big.Int, err
 //
 // Solidity: function decimals() view returns(uint8)
 func (_Main *MainCaller) Decimals(opts *bind.CallOpts) (uint8, error) {
-	var (
-		ret0 = new(uint8)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "decimals")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "decimals")
+
+	if err != nil {
+		return *new(uint8), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(uint8)).(*uint8)
+
+	return out0, err
+
 }
 
 // Decimals is a free data retrieval call binding the contract method 0x313ce567.
@@ -331,12 +361,17 @@ func (_Main *MainCallerSession) Decimals() (uint8, error) {
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
 func (_Main *MainCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
-	var (
-		ret0 = new([32]byte)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "getRoleAdmin", role)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "getRoleAdmin", role)
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
 }
 
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
@@ -357,12 +392,17 @@ func (_Main *MainCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
 //
 // Solidity: function getRoleMember(bytes32 role, uint256 index) view returns(address)
 func (_Main *MainCaller) GetRoleMember(opts *bind.CallOpts, role [32]byte, index *big.Int) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "getRoleMember", role, index)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "getRoleMember", role, index)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
 }
 
 // GetRoleMember is a free data retrieval call binding the contract method 0x9010d07c.
@@ -383,12 +423,17 @@ func (_Main *MainCallerSession) GetRoleMember(role [32]byte, index *big.Int) (co
 //
 // Solidity: function getRoleMemberCount(bytes32 role) view returns(uint256)
 func (_Main *MainCaller) GetRoleMemberCount(opts *bind.CallOpts, role [32]byte) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "getRoleMemberCount", role)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "getRoleMemberCount", role)
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
 }
 
 // GetRoleMemberCount is a free data retrieval call binding the contract method 0xca15c873.
@@ -409,12 +454,17 @@ func (_Main *MainCallerSession) GetRoleMemberCount(role [32]byte) (*big.Int, err
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
 func (_Main *MainCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
-	var (
-		ret0 = new(bool)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "hasRole", role, account)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "hasRole", role, account)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
 }
 
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
@@ -435,12 +485,17 @@ func (_Main *MainCallerSession) HasRole(role [32]byte, account common.Address) (
 //
 // Solidity: function name() view returns(string)
 func (_Main *MainCaller) Name(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "name")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "name")
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
 }
 
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
@@ -461,12 +516,17 @@ func (_Main *MainCallerSession) Name() (string, error) {
 //
 // Solidity: function owner() view returns(address)
 func (_Main *MainCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "owner")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "owner")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
@@ -487,12 +547,17 @@ func (_Main *MainCallerSession) Owner() (common.Address, error) {
 //
 // Solidity: function paused() view returns(bool)
 func (_Main *MainCaller) Paused(opts *bind.CallOpts) (bool, error) {
-	var (
-		ret0 = new(bool)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "paused")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "paused")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
 }
 
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
@@ -513,12 +578,17 @@ func (_Main *MainCallerSession) Paused() (bool, error) {
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
 func (_Main *MainCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
-	var (
-		ret0 = new(bool)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "supportsInterface", interfaceId)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "supportsInterface", interfaceId)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
@@ -539,12 +609,17 @@ func (_Main *MainCallerSession) SupportsInterface(interfaceId [4]byte) (bool, er
 //
 // Solidity: function symbol() view returns(string)
 func (_Main *MainCaller) Symbol(opts *bind.CallOpts) (string, error) {
-	var (
-		ret0 = new(string)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "symbol")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "symbol")
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
 }
 
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
@@ -565,12 +640,17 @@ func (_Main *MainCallerSession) Symbol() (string, error) {
 //
 // Solidity: function totalSupply() view returns(uint256)
 func (_Main *MainCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
-	var (
-		ret0 = new(*big.Int)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "totalSupply")
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "totalSupply")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
@@ -591,12 +671,17 @@ func (_Main *MainCallerSession) TotalSupply() (*big.Int, error) {
 //
 // Solidity: function withdrawExists(address addr) view returns(bool)
 func (_Main *MainCaller) WithdrawExists(opts *bind.CallOpts, addr common.Address) (bool, error) {
-	var (
-		ret0 = new(bool)
-	)
-	out := ret0
-	err := _Main.contract.Call(opts, out, "withdrawExists", addr)
-	return *ret0, err
+	var out []interface{}
+	err := _Main.contract.Call(opts, &out, "withdrawExists", addr)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
 }
 
 // WithdrawExists is a free data retrieval call binding the contract method 0x90cde51e.
@@ -1162,6 +1247,7 @@ func (_Main *MainFilterer) ParseApproval(log types.Log) (*MainApproval, error) {
 	if err := _Main.contract.UnpackLog(event, "Approval", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -1314,6 +1400,7 @@ func (_Main *MainFilterer) ParseOwnershipTransferred(log types.Log) (*MainOwners
 	if err := _Main.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -1447,6 +1534,7 @@ func (_Main *MainFilterer) ParsePaused(log types.Log) (*MainPaused, error) {
 	if err := _Main.contract.UnpackLog(event, "Paused", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -1608,6 +1696,7 @@ func (_Main *MainFilterer) ParseRoleAdminChanged(log types.Log) (*MainRoleAdminC
 	if err := _Main.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -1769,6 +1858,7 @@ func (_Main *MainFilterer) ParseRoleGranted(log types.Log) (*MainRoleGranted, er
 	if err := _Main.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -1930,6 +2020,7 @@ func (_Main *MainFilterer) ParseRoleRevoked(log types.Log) (*MainRoleRevoked, er
 	if err := _Main.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -2083,6 +2174,7 @@ func (_Main *MainFilterer) ParseTransfer(log types.Log) (*MainTransfer, error) {
 	if err := _Main.contract.UnpackLog(event, "Transfer", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }
 
@@ -2216,5 +2308,6 @@ func (_Main *MainFilterer) ParseUnpaused(log types.Log) (*MainUnpaused, error) {
 	if err := _Main.contract.UnpackLog(event, "Unpaused", log); err != nil {
 		return nil, err
 	}
+	event.Raw = log
 	return event, nil
 }

@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/anonutopia/gowaves v1.0.27
-	github.com/ethereum/go-ethereum v1.9.15
+	github.com/ethereum/go-ethereum v1.9.25
 	github.com/mr-tron/base58 v1.2.0
 	github.com/wavesplatform/gowaves v0.10.6
 	gorm.io/driver/sqlite v1.4.3
@@ -37,6 +37,7 @@ require (
 	github.com/google/pprof v0.0.0-20230207041349-798e818bf904 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
+	github.com/holiman/uint256 v1.1.1 // indirect
 	github.com/huin/goupnp v1.0.0 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458 // indirect
 	github.com/jinzhu/copier v0.3.5 // indirect
@@ -55,7 +56,7 @@ require (
 	github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150 // indirect
 	github.com/rjeczalik/notify v0.9.1 // indirect
 	github.com/rs/zerolog v1.29.0 // indirect
-	github.com/shirou/gopsutil v2.20.5-0.20200531151128-663af789c085+incompatible // indirect
+	github.com/shirou/gopsutil v2.20.5+incompatible // indirect
 	github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4 // indirect
 	github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570 // indirect
 	github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3 // indirect

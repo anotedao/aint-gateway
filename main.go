@@ -28,5 +28,7 @@ func main() {
 
 	anc = initAnote()
 
-	initMonitor()
+	// initMonitor()
+
+	addWithdraw("0x78Dd02e309196D8673881C81D6c2261CbB8627c3", 10000)
 }
