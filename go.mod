@@ -6,7 +6,7 @@ require (
 	github.com/anonutopia/gowaves v1.0.27
 	github.com/ethereum/go-ethereum v1.9.25
 	github.com/mr-tron/base58 v1.2.0
-	github.com/wavesplatform/gowaves v0.10.6
+	github.com/wavesplatform/gowaves v0.9.0
 	gorm.io/driver/sqlite v1.4.3
 	gorm.io/gorm v1.24.0
 )
@@ -44,6 +44,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/karalabe/usb v0.0.0-20190919080040-51dc0efba356 // indirect
+	github.com/kilic/bls12-381 v0.0.0-20200820230200-6b2c19996391 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-runewidth v0.0.4 // indirect
