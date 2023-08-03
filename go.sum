@@ -45,6 +45,8 @@ github.com/blang/semver/v4 v4.0.0/go.mod h1:IbckMUScFkM3pff0VJDNKRiT6TG/YpiHIM2y
 github.com/btcsuite/btcd v0.0.0-20171128150713-2e60448ffcc6/go.mod h1:Dmm/EzmjnCiweXmzRIAiUWCInVmPgjkzgv5k4tVyXiQ=
 github.com/btcsuite/btcd v0.20.1-beta h1:Ik4hyJqN8Jfyv3S4AGBOmyouMsYE3EdYODkMbQjwPGw=
 github.com/btcsuite/btcd v0.20.1-beta/go.mod h1:wVuoA8VJLEcwgqHBwHmzLRazpKxTv13Px/pDuV7OomQ=
+github.com/btcsuite/btcd v0.22.1 h1:CnwP9LM/M9xuRrGSCGeMVs9iv09uMqwsVX7EeIpgV2c=
+github.com/btcsuite/btcd v0.22.1/go.mod h1:wqgTSL29+50LRkmOVknEdmt8ZojIzhuWvgu/iptuN7Y=
 github.com/btcsuite/btcd/btcec/v2 v2.3.2 h1:5n0X6hX0Zk+6omWcihdYvdAlGf2DfasC0GMf7DClJ3U=
 github.com/btcsuite/btcd/btcec/v2 v2.3.2/go.mod h1:zYzJ8etWJQIv1Ogk7OzpWjowwOdXY1W/17j2MW85J04=
 github.com/btcsuite/btcd/chaincfg/chainhash v1.0.1 h1:q0rUy8C/TYNBQS1+CGKw68tLOFYSNEs0TFnxxnS9+4U=
@@ -339,6 +341,8 @@ github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6Kllzaw
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 github.com/wavesplatform/gowaves v0.9.0 h1:9sR0uGACm1t/1wPrAevn9364ffEqzId2a+/WIi2+NUQ=
 github.com/wavesplatform/gowaves v0.9.0/go.mod h1:rilRD4gJBdhpgpqfl3b4ak9vh8OeEFfJyn+eygN+cJQ=
+github.com/wavesplatform/gowaves v0.10.0 h1:yKupiOT39khJiuF3cTxJFBX99jq0fiRfNXbykDZF7qU=
+github.com/wavesplatform/gowaves v0.10.0/go.mod h1:EzFk37RQAn+b6q0j2MXO+3T+UG5aURK/N1oXZZ+TzgM=
 github.com/wavesplatform/gowaves v0.10.6 h1:mSK41H5T4nwcCaRMmr7b8/gGjBSYr8kN0XEZ0MFMer0=
 github.com/wavesplatform/gowaves v0.10.6/go.mod h1:c6iayI6ffvgj+NZI8CzYwSi0LolDtLIGAFk10WwXptA=
 github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208 h1:1cngl9mPEoITZG8s8cVcUy5CeIBYhEESkOB7m6Gmkrk=

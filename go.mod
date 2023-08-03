@@ -6,7 +6,7 @@ require (
 	github.com/anonutopia/gowaves v1.0.27
 	github.com/ethereum/go-ethereum v1.9.25
 	github.com/mr-tron/base58 v1.2.0
-	github.com/wavesplatform/gowaves v0.9.0
+	github.com/wavesplatform/gowaves v0.10.0
 	gorm.io/driver/sqlite v1.4.3
 	gorm.io/gorm v1.24.0
 )
@@ -17,7 +17,7 @@ require (
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847 // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
-	github.com/btcsuite/btcd v0.20.1-beta // indirect
+	github.com/btcsuite/btcd v0.22.1 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/consensys/bavard v0.1.13 // indirect
