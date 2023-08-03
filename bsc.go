@@ -4,11 +4,16 @@ import (
 	"context"
 	"crypto/ecdsa"
 	"fmt"
+	"io"
 	"log"
 	"math/big"
+	"os"
+	"strings"
 
+	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 )
@@ -121,4 +126,110 @@ func addWithdraw(addr string, amount uint64) {
 
 	// _, err = instance.Approve(auth, address, amount)
 	// log.Println(err)
+}
+
+func initBsc() {
+	client, err := ethclient.Dial("wss://cold-alien-scion.bsc.discover.quiknode.pro/b80be7c1662c2485ee5d9508c442e0b79200afa7/")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	headers := make(chan *types.Header)
+	sub, err := client.SubscribeNewHead(context.Background(), headers)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for {
+		select {
+		case err := <-sub.Err():
+			log.Fatal(err)
+		case header := <-headers:
+			// fmt.Println(header.Hash().Hex()) // 0xbc10defa8dda384c96a17640d84de5578804945d347072e091b4e5f390ddea7f
+
+			block, err := client.BlockByHash(context.Background(), header.Hash())
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			for _, t := range block.Transactions() {
+				ca := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
+				if t.To() != nil && *t.To() == ca {
+					contractABI, err := abi.JSON(strings.NewReader(GetLocalABI("./anote.abi")))
+					if err != nil {
+						log.Fatal(err)
+					}
+					// log.Println(prettyPrint(t))
+					// addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
+					// log.Println(addr)
+					// log.Println(amount)
+
+					blockchain := "BSC"
+
+					key := blockchain + Sep + t.Hash().String()
+					data, err := getData(key)
+
+					tdb := &Transaction{}
+					db.First(t, &Transaction{TxID: t.Hash().String()})
+
+					if err == nil && (data == nil || !data.(bool)) && tdb.ID == 0 && !tdb.Processed {
+						done := true
+						dataTransaction(key, nil, nil, &done)
+
+						tdb.TxID = t.Hash().String()
+						tdb.Processed = true
+						tdb.Type = blockchain
+						db.Save(t)
+
+						if block.Time()*1000 > uint64(mon.StartedTime) {
+							addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
+							// log.Println(block.Time())
+							// log.Println(mon.StartedTime)
+							sendAsset(amount, "", addr, t.Hash().String())
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+func GetLocalABI(path string) string {
+	abiFile, err := os.Open(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer abiFile.Close()
+
+	result, err := io.ReadAll(abiFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return string(result)
+}
+
+func DecodeTransactionInputData(contractABI *abi.ABI, data []byte) (string, uint64) {
+	addr := ""
+	amount := uint64(0)
+	// The first 4 bytes of the t represent the ID of the method in the ABI
+	// https://docs.soliditylang.org/en/v0.5.3/abi-spec.html#function-selector
+	methodSigData := data[:4]
+	method, err := contractABI.MethodById(methodSigData)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	inputsSigData := data[4:]
+	inputsMap := make(map[string]interface{})
+	if err := method.Inputs.UnpackIntoMap(inputsMap, inputsSigData); err != nil {
+		log.Fatal(err)
+	}
+
+	if method.Name == "deposit" {
+		addr = inputsMap["to"].(string)
+		a := inputsMap["amount"].(*big.Int)
+		amount = a.Uint64()
+	}
+
+	return addr, amount
 }

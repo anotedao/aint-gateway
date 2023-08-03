@@ -73,7 +73,7 @@ func (m *Monitor) checkTransaction(talr *gowaves.TransactionsAddressLimitRespons
 			t.Type = blockchain
 			db.Save(t)
 
-			if len(talr.Attachment) > 0 {
+			if len(talr.Attachment) > 0 && talr.Timestamp > m.StartedTime {
 				m.processTransaction(talr, blockchain)
 			}
 		}
@@ -178,8 +178,10 @@ func (m *Monitor) loadTransactions() {
 	}
 }
 
-func initMonitor() {
+func initMonitor() *Monitor {
 	m := &Monitor{}
 	go m.loadTransactions()
-	m.start()
+	go m.start()
+
+	return m
 }

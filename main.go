@@ -17,6 +17,8 @@ var anc *gowaves.WavesNodeClient
 
 var db *gorm.DB
 
+var mon *Monitor
+
 func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
@@ -28,7 +30,9 @@ func main() {
 
 	anc = initAnote()
 
-	initMonitor()
+	mon = initMonitor()
+
+	initBsc()
 
 	// addWithdraw("0x78Dd02e309196D8673881C81D6c2261CbB8627c3", 10000)
 }
