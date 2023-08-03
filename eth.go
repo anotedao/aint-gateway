@@ -52,15 +52,17 @@ func getAccountAuth(client *ethclient.Client, accountAddress string) *bind.Trans
 }
 
 func addWithdraw(addr string, amount uint64) {
-	// ao := common.HexToAddress(addr)
-	// am := big.NewInt(int64(amount))
+	ao := common.HexToAddress(addr)
+	am := big.NewInt(int64(amount))
 
-	client, err := ethclient.Dial("https://bsc.meowrpc.com")
+	client, err := ethclient.Dial("https://endpoints.omniatech.io/v1/bsc/mainnet/public")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	auth := getAccountAuth(client, conf.EthKey)
+	auth.GasPrice = big.NewInt(3000000000)
+	auth.GasLimit = 50000
 
 	tokenAddress := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
 	instance, err := NewMain(tokenAddress, client)
@@ -95,8 +97,8 @@ func addWithdraw(addr string, amount uint64) {
 
 	// fmt.Printf("wei: %s\n", bal) // "wei: 74605500647408739782407023"
 
-	// _, err = instance.AddWithdraw(auth, ao, am)
-	// log.Println(err)
+	_, err = instance.AddWithdraw(auth, ao, am)
+	log.Println(err)
 
 	// fbal := new(big.Float)
 	// fbal.SetString(bal.String())
@@ -104,14 +106,14 @@ func addWithdraw(addr string, amount uint64) {
 
 	// fmt.Printf("balance: %f", value) // "balance: 74605500.647409"
 
-	a := big.NewInt(1000000000)
-	t, err := instance.Deposit(auth, "blablabla", a)
-	log.Println(err)
-	log.Println(prettyPrint(t))
+	// a := big.NewInt(1000000000)
+	// t, err := instance.AddWithdraw(auth, "blablabla", a)
+	// log.Println(err)
+	// log.Println(prettyPrint(t))
 
-	ctx := context.Background()
-	err = client.SendTransaction(ctx, t)
-	log.Println(err)
+	// ctx := context.Background()
+	// err = client.SendTransaction(ctx, t)
+	// log.Println(err)
 
 	// // instance.Mint(auth, address, amount)
 

@@ -123,7 +123,11 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		logTelegram("Caught a scumbag.")
 	} else {
 		recAddress = strings.ReplaceAll(strings.ReplaceAll(recAddress, "\n", ""), " ", "")
-		sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		if strings.HasPrefix(recAddress, "0x") {
+			addWithdraw(recAddress, uint64(talr.Amount))
+		} else {
+			sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
+		}
 
 		if assetId == AintAnoteId || assetId == AintWavesId {
 			logTelegram(fmt.Sprintf("Gateway AINT: %s %s %.8f", talr.Sender, recAddress, float64(talr.Amount)/float64(SatInBTC)))
@@ -159,6 +163,10 @@ func (m *Monitor) loadTransactions() {
 	}
 
 	data, _, err := cl.Addresses.AddressesData(ctx, addr)
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+	}
 	for _, de := range data {
 		txid := strings.Split(de.GetKey(), Sep)[1]
 		blockchain := strings.Split(de.GetKey(), Sep)[0]
