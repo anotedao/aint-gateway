@@ -185,7 +185,9 @@ func initBsc() {
 							addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
 							// log.Println(block.Time())
 							// log.Println(mon.StartedTime)
-							sendAsset(amount, "", addr, t.Hash().String())
+							if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
+								sendAsset(amount, "", addr, t.Hash().String())
+							}
 						}
 					}
 				}
