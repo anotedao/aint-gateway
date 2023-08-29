@@ -143,50 +143,50 @@ func initBsc() {
 	for {
 		select {
 		case err := <-sub.Err():
-			log.Fatal(err)
+			log.Println(err)
 		case header := <-headers:
 			// fmt.Println(header.Hash().Hex()) // 0xbc10defa8dda384c96a17640d84de5578804945d347072e091b4e5f390ddea7f
 
 			block, err := client.BlockByHash(context.Background(), header.Hash())
 			if err != nil {
-				log.Fatal(err)
-			}
+				log.Println(err)
+			} else {
+				for _, t := range block.Transactions() {
+					ca := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
+					if t.To() != nil && *t.To() == ca {
+						contractABI, err := abi.JSON(strings.NewReader(GetLocalABI("./anote.abi")))
+						if err != nil {
+							log.Fatal(err)
+						}
+						// log.Println(prettyPrint(t))
+						// addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
+						// log.Println(addr)
+						// log.Println(amount)
 
-			for _, t := range block.Transactions() {
-				ca := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
-				if t.To() != nil && *t.To() == ca {
-					contractABI, err := abi.JSON(strings.NewReader(GetLocalABI("./anote.abi")))
-					if err != nil {
-						log.Fatal(err)
-					}
-					// log.Println(prettyPrint(t))
-					// addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
-					// log.Println(addr)
-					// log.Println(amount)
+						blockchain := "BSC"
 
-					blockchain := "BSC"
+						key := blockchain + Sep + t.Hash().String()
+						data, err := getData(key)
 
-					key := blockchain + Sep + t.Hash().String()
-					data, err := getData(key)
+						tdb := &Transaction{}
+						db.First(t, &Transaction{TxID: t.Hash().String()})
 
-					tdb := &Transaction{}
-					db.First(t, &Transaction{TxID: t.Hash().String()})
+						if err == nil && (data == nil || !data.(bool)) && tdb.ID == 0 && !tdb.Processed {
+							done := true
+							dataTransaction(key, nil, nil, &done)
 
-					if err == nil && (data == nil || !data.(bool)) && tdb.ID == 0 && !tdb.Processed {
-						done := true
-						dataTransaction(key, nil, nil, &done)
+							tdb.TxID = t.Hash().String()
+							tdb.Processed = true
+							tdb.Type = blockchain
+							db.Save(t)
 
-						tdb.TxID = t.Hash().String()
-						tdb.Processed = true
-						tdb.Type = blockchain
-						db.Save(t)
-
-						if block.Time()*1000 > uint64(mon.StartedTime) {
-							addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
-							// log.Println(block.Time())
-							// log.Println(mon.StartedTime)
-							if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
-								sendAsset(amount, "", addr, t.Hash().String())
+							if block.Time()*1000 > uint64(mon.StartedTime) {
+								addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
+								// log.Println(block.Time())
+								// log.Println(mon.StartedTime)
+								if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
+									sendAsset(amount, "", addr, t.Hash().String())
+								}
 							}
 						}
 					}
