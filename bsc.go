@@ -132,12 +132,14 @@ func initBsc() {
 	client, err := ethclient.Dial("wss://cold-alien-scion.bsc.discover.quiknode.pro/b80be7c1662c2485ee5d9508c442e0b79200afa7/")
 	if err != nil {
 		log.Fatal(err)
+		logTelegram(err.Error())
 	}
 
 	headers := make(chan *types.Header)
 	sub, err := client.SubscribeNewHead(context.Background(), headers)
 	if err != nil {
 		log.Fatal(err)
+		logTelegram(err.Error())
 	}
 
 	for {
@@ -151,6 +153,7 @@ func initBsc() {
 			block, err := client.BlockByNumber(context.Background(), header.Number)
 			if err != nil {
 				log.Println(err)
+				logTelegram(err.Error())
 			} else {
 				for _, t := range block.Transactions() {
 					ca := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
@@ -158,6 +161,7 @@ func initBsc() {
 						contractABI, err := abi.JSON(strings.NewReader(GetLocalABI("./anote.abi")))
 						if err != nil {
 							log.Fatal(err)
+							logTelegram(err.Error())
 						}
 						// log.Println(prettyPrint(t))
 						// addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
