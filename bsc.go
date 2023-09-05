@@ -147,7 +147,7 @@ func initBsc() {
 		case header := <-headers:
 			// fmt.Println(header.Hash().Hex()) // 0xbc10defa8dda384c96a17640d84de5578804945d347072e091b4e5f390ddea7f
 
-			block, err := client.BlockByHash(context.Background(), header.Hash())
+			block, err := client.BlockByNumber(context.Background(), header.Number)
 			if err != nil {
 				log.Println(err)
 			} else {
