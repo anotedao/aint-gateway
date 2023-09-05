@@ -144,6 +144,7 @@ func initBsc() {
 		select {
 		case err := <-sub.Err():
 			log.Println(err)
+			logTelegram(err.Error())
 		case header := <-headers:
 			// fmt.Println(header.Hash().Hex()) // 0xbc10defa8dda384c96a17640d84de5578804945d347072e091b4e5f390ddea7f
 
