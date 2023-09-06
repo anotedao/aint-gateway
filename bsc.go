@@ -103,7 +103,10 @@ func addWithdraw(addr string, amount uint64) {
 	// fmt.Printf("wei: %s\n", bal) // "wei: 74605500647408739782407023"
 
 	_, err = instance.AddWithdraw(auth, ao, am)
-	log.Println(err)
+	if err != nil {
+		log.Println(err)
+		logTelegram(err.Error())
+	}
 
 	// fbal := new(big.Float)
 	// fbal.SetString(bal.String())
