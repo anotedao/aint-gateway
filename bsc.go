@@ -166,10 +166,10 @@ func initBsc() {
 							log.Fatal(err)
 							logTelegram(err.Error())
 						}
-						// log.Println(prettyPrint(t))
-						// addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
-						// log.Println(addr)
-						// log.Println(amount)
+						log.Println(prettyPrint(t))
+						addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
+						log.Println(addr)
+						log.Println(amount)
 
 						blockchain := "BSC"
 
