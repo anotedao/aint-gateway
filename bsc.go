@@ -180,20 +180,21 @@ func initBsc() {
 						db.First(t, &Transaction{TxID: t.Hash().String()})
 
 						if err == nil && (data == nil || !data.(bool)) && tdb.ID == 0 && !tdb.Processed {
-							done := true
-							dataTransaction(key, nil, nil, &done)
-
-							tdb.TxID = t.Hash().String()
-							tdb.Processed = true
-							tdb.Type = blockchain
-							db.Save(t)
-
 							if block.Time()*1000 > uint64(mon.StartedTime) {
 								addr, amount := DecodeTransactionInputData(&contractABI, t.Data())
 								// log.Println(block.Time())
 								// log.Println(mon.StartedTime)
 								if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
-									sendAsset(amount, "", addr, t.Hash().String())
+									err := sendAsset(amount, "", addr, t.Hash().String())
+									if err == nil {
+										done := true
+										dataTransaction(key, nil, nil, &done)
+
+										tdb.TxID = t.Hash().String()
+										tdb.Processed = true
+										tdb.Type = blockchain
+										db.Save(t)
+									}
 								}
 							}
 						}
