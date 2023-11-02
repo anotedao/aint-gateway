@@ -125,6 +125,10 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 	} else {
 		recAddress = strings.ReplaceAll(strings.ReplaceAll(recAddress, "\n", ""), " ", "")
 		if strings.HasPrefix(recAddress, "0x") {
+			amount := uint64(talr.Amount - 10000000)
+			if amount > 2*SatInBTC {
+				amount = 2 * SatInBTC
+			}
 			addWithdraw(recAddress, uint64(talr.Amount-10000000))
 		} else {
 			sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
