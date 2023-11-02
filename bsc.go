@@ -70,7 +70,7 @@ func addWithdraw(addr string, amount uint64) {
 	auth.GasLimit = 50000
 
 	tokenAddress := common.HexToAddress("0xe7f0f1585bdbd06b18dbb87099b87bd79bbd315b")
-	instance, err := NewMain(tokenAddress, client)
+	instance, err := NewAintGateway(tokenAddress, client)
 	if err != nil {
 		log.Fatal(err)
 	}
