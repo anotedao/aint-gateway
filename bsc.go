@@ -202,13 +202,19 @@ func initBsc() {
 										logTelegram(err.Error())
 									}
 
-									m, err := t.AsMessage(types.NewEIP155Signer(chainID))
+									// m, err := t.AsMessage(types.NewEIP155Signer(chainID))
+									// if err != nil {
+									// 	log.Println(err)
+									// 	logTelegram(err.Error())
+									// }
+									// sender := m.From().Hex()
+
+									from, err := types.Sender(types.NewLondonSigner(chainID), t)
 									if err != nil {
-										log.Println(err)
+										fmt.Println(err) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 										logTelegram(err.Error())
 									}
-									sender := m.From().Hex()
-									logTelegram(fmt.Sprintf("Gateway: %s %s %.8f", sender, addr, float64(amount)/float64(SatInBTC)))
+									logTelegram(fmt.Sprintf("Gateway: %s %s %.8f", from.Hex(), addr, float64(amount)/float64(SatInBTC)))
 								}
 							}
 						}
