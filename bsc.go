@@ -185,7 +185,8 @@ func initBsc() {
 								// log.Println(block.Time())
 								// log.Println(mon.StartedTime)
 								if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
-									err := sendAsset(amount, "", addr, t.Hash().String())
+									// err := sendAsset(amount, "", addr, t.Hash().String())
+									err = nil
 									if err == nil {
 										done := true
 										dataTransaction(key, nil, nil, &done)
@@ -195,6 +196,7 @@ func initBsc() {
 										tdb.Type = blockchain
 										db.Save(t)
 									}
+									logTelegram(fmt.Sprintf("Gateway: %s %s %.8f", addr, addr, float64(amount)/float64(SatInBTC)))
 								}
 							}
 						}
