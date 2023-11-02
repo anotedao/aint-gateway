@@ -195,9 +195,16 @@ func initBsc() {
 										tdb.Type = blockchain
 										db.Save(t)
 									}
-									m, err := t.AsMessage()
+
+									chainID, err := client.NetworkID(context.Background())
 									if err != nil {
-										log.Fatal(err)
+										log.Println(err)
+										logTelegram(err.Error())
+									}
+
+									m, err := t.AsMessage(types.NewEIP155Signer(chainID))
+									if err != nil {
+										log.Println(err)
 										logTelegram(err.Error())
 									}
 									sender := m.From().Hex()
