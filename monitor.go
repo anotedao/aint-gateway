@@ -129,7 +129,7 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 			if amount > 2*SatInBTC {
 				amount = 2 * SatInBTC
 			}
-			addWithdraw(recAddress, uint64(talr.Amount-10000000))
+			addWithdraw(recAddress, amount)
 		} else {
 			sendAsset(uint64(talr.Amount), assetId, recAddress, talr.Sender)
 		}
