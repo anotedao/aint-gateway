@@ -69,7 +69,7 @@ func addWithdraw(addr string, amount uint64) {
 	auth.GasPrice = big.NewInt(3000000000)
 	auth.GasLimit = 50000
 
-	tokenAddress := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
+	tokenAddress := common.HexToAddress("0xe7f0f1585bdbd06b18dbb87099b87bd79bbd315b")
 	instance, err := NewMain(tokenAddress, client)
 	if err != nil {
 		log.Fatal(err)
@@ -159,7 +159,7 @@ func initBsc() {
 				logTelegram(err.Error())
 			} else {
 				for _, t := range block.Transactions() {
-					ca := common.HexToAddress("0xbad04e33cc88bbcccc1b7adb8319f7d36f5bc472")
+					ca := common.HexToAddress("0xe7f0f1585bdbd06b18dbb87099b87bd79bbd315b")
 					if t.To() != nil && *t.To() == ca {
 						contractABI, err := abi.JSON(strings.NewReader(GetLocalABI("./anote.abi")))
 						if err != nil {
@@ -185,8 +185,7 @@ func initBsc() {
 								// log.Println(block.Time())
 								// log.Println(mon.StartedTime)
 								if len(addr) > 0 && amount > 0 && strings.HasPrefix(addr, "3A") {
-									// err := sendAsset(amount, "", addr, t.Hash().String())
-									err = nil
+									err := sendAsset(amount, "", addr, t.Hash().String())
 									if err == nil {
 										done := true
 										dataTransaction(key, nil, nil, &done)
@@ -196,7 +195,13 @@ func initBsc() {
 										tdb.Type = blockchain
 										db.Save(t)
 									}
-									logTelegram(fmt.Sprintf("Gateway: %s %s %.8f", addr, addr, float64(amount)/float64(SatInBTC)))
+									m, err := t.AsMessage()
+									if err != nil {
+										log.Fatal(err)
+										logTelegram(err.Error())
+									}
+									sender := m.From().Hex()
+									logTelegram(fmt.Sprintf("Gateway: %s %s %.8f", sender, addr, float64(amount)/float64(SatInBTC)))
 								}
 							}
 						}
