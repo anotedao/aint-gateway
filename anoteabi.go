@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package aint-gateway
+package AintGateway
 
 import (
 	"math/big"
@@ -33,117 +33,117 @@ var (
 
 
 
-	// Aint-gatewayMetaData contains all meta data concerning the Aint-gateway contract.
-	var Aint-gatewayMetaData = &bind.MetaData{
+	// AintGatewayMetaData contains all meta data concerning the AintGateway contract.
+	var AintGatewayMetaData = &bind.MetaData{
 		ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AccessControlBadConfirmation\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"neededRole\",\"type\":\"bytes32\"}],\"name\":\"AccessControlUnauthorizedAccount\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"allowance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientAllowance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidApprover\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSpender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINTER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_withdrawCount\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_withdraws\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"addWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"cancelWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"to\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWithdrawFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"callerConfirmation\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setWithdrawFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"withdrawExists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 		
 	}
-	// Aint-gatewayABI is the input ABI used to generate the binding from.
-	// Deprecated: Use Aint-gatewayMetaData.ABI instead.
-	var Aint-gatewayABI = Aint-gatewayMetaData.ABI
+	// AintGatewayABI is the input ABI used to generate the binding from.
+	// Deprecated: Use AintGatewayMetaData.ABI instead.
+	var AintGatewayABI = AintGatewayMetaData.ABI
 
 	
 
 	
 
-	// Aint-gateway is an auto generated Go binding around an Ethereum contract.
-	type Aint-gateway struct {
-	  Aint-gatewayCaller     // Read-only binding to the contract
-	  Aint-gatewayTransactor // Write-only binding to the contract
-	  Aint-gatewayFilterer   // Log filterer for contract events
+	// AintGateway is an auto generated Go binding around an Ethereum contract.
+	type AintGateway struct {
+	  AintGatewayCaller     // Read-only binding to the contract
+	  AintGatewayTransactor // Write-only binding to the contract
+	  AintGatewayFilterer   // Log filterer for contract events
 	}
 
-	// Aint-gatewayCaller is an auto generated read-only Go binding around an Ethereum contract.
-	type Aint-gatewayCaller struct {
+	// AintGatewayCaller is an auto generated read-only Go binding around an Ethereum contract.
+	type AintGatewayCaller struct {
 	  contract *bind.BoundContract // Generic contract wrapper for the low level calls
 	}
 
-	// Aint-gatewayTransactor is an auto generated write-only Go binding around an Ethereum contract.
-	type Aint-gatewayTransactor struct {
+	// AintGatewayTransactor is an auto generated write-only Go binding around an Ethereum contract.
+	type AintGatewayTransactor struct {
 	  contract *bind.BoundContract // Generic contract wrapper for the low level calls
 	}
 
-	// Aint-gatewayFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-	type Aint-gatewayFilterer struct {
+	// AintGatewayFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+	type AintGatewayFilterer struct {
 	  contract *bind.BoundContract // Generic contract wrapper for the low level calls
 	}
 
-	// Aint-gatewaySession is an auto generated Go binding around an Ethereum contract,
+	// AintGatewaySession is an auto generated Go binding around an Ethereum contract,
 	// with pre-set call and transact options.
-	type Aint-gatewaySession struct {
-	  Contract     *Aint-gateway        // Generic contract binding to set the session for
+	type AintGatewaySession struct {
+	  Contract     *AintGateway        // Generic contract binding to set the session for
 	  CallOpts     bind.CallOpts     // Call options to use throughout this session
 	  TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 	}
 
-	// Aint-gatewayCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+	// AintGatewayCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 	// with pre-set call options.
-	type Aint-gatewayCallerSession struct {
-	  Contract *Aint-gatewayCaller // Generic contract caller binding to set the session for
+	type AintGatewayCallerSession struct {
+	  Contract *AintGatewayCaller // Generic contract caller binding to set the session for
 	  CallOpts bind.CallOpts    // Call options to use throughout this session
 	}
 
-	// Aint-gatewayTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+	// AintGatewayTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 	// with pre-set transact options.
-	type Aint-gatewayTransactorSession struct {
-	  Contract     *Aint-gatewayTransactor // Generic contract transactor binding to set the session for
+	type AintGatewayTransactorSession struct {
+	  Contract     *AintGatewayTransactor // Generic contract transactor binding to set the session for
 	  TransactOpts bind.TransactOpts    // Transaction auth options to use throughout this session
 	}
 
-	// Aint-gatewayRaw is an auto generated low-level Go binding around an Ethereum contract.
-	type Aint-gatewayRaw struct {
-	  Contract *Aint-gateway // Generic contract binding to access the raw methods on
+	// AintGatewayRaw is an auto generated low-level Go binding around an Ethereum contract.
+	type AintGatewayRaw struct {
+	  Contract *AintGateway // Generic contract binding to access the raw methods on
 	}
 
-	// Aint-gatewayCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-	type Aint-gatewayCallerRaw struct {
-		Contract *Aint-gatewayCaller // Generic read-only contract binding to access the raw methods on
+	// AintGatewayCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+	type AintGatewayCallerRaw struct {
+		Contract *AintGatewayCaller // Generic read-only contract binding to access the raw methods on
 	}
 
-	// Aint-gatewayTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-	type Aint-gatewayTransactorRaw struct {
-		Contract *Aint-gatewayTransactor // Generic write-only contract binding to access the raw methods on
+	// AintGatewayTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+	type AintGatewayTransactorRaw struct {
+		Contract *AintGatewayTransactor // Generic write-only contract binding to access the raw methods on
 	}
 
-	// NewAint-gateway creates a new instance of Aint-gateway, bound to a specific deployed contract.
-	func NewAint-gateway(address common.Address, backend bind.ContractBackend) (*Aint-gateway, error) {
-	  contract, err := bindAint-gateway(address, backend, backend, backend)
+	// NewAintGateway creates a new instance of AintGateway, bound to a specific deployed contract.
+	func NewAintGateway(address common.Address, backend bind.ContractBackend) (*AintGateway, error) {
+	  contract, err := bindAintGateway(address, backend, backend, backend)
 	  if err != nil {
 	    return nil, err
 	  }
-	  return &Aint-gateway{ Aint-gatewayCaller: Aint-gatewayCaller{contract: contract}, Aint-gatewayTransactor: Aint-gatewayTransactor{contract: contract}, Aint-gatewayFilterer: Aint-gatewayFilterer{contract: contract} }, nil
+	  return &AintGateway{ AintGatewayCaller: AintGatewayCaller{contract: contract}, AintGatewayTransactor: AintGatewayTransactor{contract: contract}, AintGatewayFilterer: AintGatewayFilterer{contract: contract} }, nil
 	}
 
-	// NewAint-gatewayCaller creates a new read-only instance of Aint-gateway, bound to a specific deployed contract.
-	func NewAint-gatewayCaller(address common.Address, caller bind.ContractCaller) (*Aint-gatewayCaller, error) {
-	  contract, err := bindAint-gateway(address, caller, nil, nil)
+	// NewAintGatewayCaller creates a new read-only instance of AintGateway, bound to a specific deployed contract.
+	func NewAintGatewayCaller(address common.Address, caller bind.ContractCaller) (*AintGatewayCaller, error) {
+	  contract, err := bindAintGateway(address, caller, nil, nil)
 	  if err != nil {
 	    return nil, err
 	  }
-	  return &Aint-gatewayCaller{contract: contract}, nil
+	  return &AintGatewayCaller{contract: contract}, nil
 	}
 
-	// NewAint-gatewayTransactor creates a new write-only instance of Aint-gateway, bound to a specific deployed contract.
-	func NewAint-gatewayTransactor(address common.Address, transactor bind.ContractTransactor) (*Aint-gatewayTransactor, error) {
-	  contract, err := bindAint-gateway(address, nil, transactor, nil)
+	// NewAintGatewayTransactor creates a new write-only instance of AintGateway, bound to a specific deployed contract.
+	func NewAintGatewayTransactor(address common.Address, transactor bind.ContractTransactor) (*AintGatewayTransactor, error) {
+	  contract, err := bindAintGateway(address, nil, transactor, nil)
 	  if err != nil {
 	    return nil, err
 	  }
-	  return &Aint-gatewayTransactor{contract: contract}, nil
+	  return &AintGatewayTransactor{contract: contract}, nil
 	}
 
-	// NewAint-gatewayFilterer creates a new log filterer instance of Aint-gateway, bound to a specific deployed contract.
- 	func NewAint-gatewayFilterer(address common.Address, filterer bind.ContractFilterer) (*Aint-gatewayFilterer, error) {
- 	  contract, err := bindAint-gateway(address, nil, nil, filterer)
+	// NewAintGatewayFilterer creates a new log filterer instance of AintGateway, bound to a specific deployed contract.
+ 	func NewAintGatewayFilterer(address common.Address, filterer bind.ContractFilterer) (*AintGatewayFilterer, error) {
+ 	  contract, err := bindAintGateway(address, nil, nil, filterer)
  	  if err != nil {
  	    return nil, err
  	  }
- 	  return &Aint-gatewayFilterer{contract: contract}, nil
+ 	  return &AintGatewayFilterer{contract: contract}, nil
  	}
 
-	// bindAint-gateway binds a generic wrapper to an already deployed contract.
-	func bindAint-gateway(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	  parsed, err := Aint-gatewayMetaData.GetAbi()
+	// bindAintGateway binds a generic wrapper to an already deployed contract.
+	func bindAintGateway(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	  parsed, err := AintGatewayMetaData.GetAbi()
 	  if err != nil {
 	    return nil, err
 	  }
@@ -154,47 +154,47 @@ var (
 	// sets the output to result. The result type might be a single field for simple
 	// returns, a slice of interfaces for anonymous returns and a struct for named
 	// returns.
-	func (_Aint-gateway *Aint-gatewayRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-		return _Aint-gateway.Contract.Aint-gatewayCaller.contract.Call(opts, result, method, params...)
+	func (_AintGateway *AintGatewayRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+		return _AintGateway.Contract.AintGatewayCaller.contract.Call(opts, result, method, params...)
 	}
 
 	// Transfer initiates a plain transaction to move funds to the contract, calling
 	// its default method if one is available.
-	func (_Aint-gateway *Aint-gatewayRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-		return _Aint-gateway.Contract.Aint-gatewayTransactor.contract.Transfer(opts)
+	func (_AintGateway *AintGatewayRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+		return _AintGateway.Contract.AintGatewayTransactor.contract.Transfer(opts)
 	}
 
 	// Transact invokes the (paid) contract method with params as input values.
-	func (_Aint-gateway *Aint-gatewayRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-		return _Aint-gateway.Contract.Aint-gatewayTransactor.contract.Transact(opts, method, params...)
+	func (_AintGateway *AintGatewayRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+		return _AintGateway.Contract.AintGatewayTransactor.contract.Transact(opts, method, params...)
 	}
 
 	// Call invokes the (constant) contract method with params as input values and
 	// sets the output to result. The result type might be a single field for simple
 	// returns, a slice of interfaces for anonymous returns and a struct for named
 	// returns.
-	func (_Aint-gateway *Aint-gatewayCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-		return _Aint-gateway.Contract.contract.Call(opts, result, method, params...)
+	func (_AintGateway *AintGatewayCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+		return _AintGateway.Contract.contract.Call(opts, result, method, params...)
 	}
 
 	// Transfer initiates a plain transaction to move funds to the contract, calling
 	// its default method if one is available.
-	func (_Aint-gateway *Aint-gatewayTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-		return _Aint-gateway.Contract.contract.Transfer(opts)
+	func (_AintGateway *AintGatewayTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+		return _AintGateway.Contract.contract.Transfer(opts)
 	}
 
 	// Transact invokes the (paid) contract method with params as input values.
-	func (_Aint-gateway *Aint-gatewayTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-		return _Aint-gateway.Contract.contract.Transact(opts, method, params...)
+	func (_AintGateway *AintGatewayTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+		return _AintGateway.Contract.contract.Transact(opts, method, params...)
 	}
 
 	
 		// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 		//
 		// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCaller) DEFAULTADMINROLE(opts *bind.CallOpts ) ([32]byte, error) {
+		func (_AintGateway *AintGatewayCaller) DEFAULTADMINROLE(opts *bind.CallOpts ) ([32]byte, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE" )
+			err := _AintGateway.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE" )
 			
 			if err != nil {
 				return *new([32]byte),  err
@@ -209,23 +209,23 @@ var (
 		// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 		//
 		// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewaySession) DEFAULTADMINROLE() ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.DEFAULTADMINROLE(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) DEFAULTADMINROLE() ( [32]byte,  error) {
+		  return _AintGateway.Contract.DEFAULTADMINROLE(&_AintGateway.CallOpts )
 		}
 
 		// DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 		//
 		// Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCallerSession) DEFAULTADMINROLE() ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.DEFAULTADMINROLE(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) DEFAULTADMINROLE() ( [32]byte,  error) {
+		  return _AintGateway.Contract.DEFAULTADMINROLE(&_AintGateway.CallOpts )
 		}
 	
 		// MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 		//
 		// Solidity: function MINTER_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCaller) MINTERROLE(opts *bind.CallOpts ) ([32]byte, error) {
+		func (_AintGateway *AintGatewayCaller) MINTERROLE(opts *bind.CallOpts ) ([32]byte, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "MINTER_ROLE" )
+			err := _AintGateway.contract.Call(opts, &out, "MINTER_ROLE" )
 			
 			if err != nil {
 				return *new([32]byte),  err
@@ -240,23 +240,23 @@ var (
 		// MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 		//
 		// Solidity: function MINTER_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewaySession) MINTERROLE() ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.MINTERROLE(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) MINTERROLE() ( [32]byte,  error) {
+		  return _AintGateway.Contract.MINTERROLE(&_AintGateway.CallOpts )
 		}
 
 		// MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 		//
 		// Solidity: function MINTER_ROLE() view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCallerSession) MINTERROLE() ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.MINTERROLE(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) MINTERROLE() ( [32]byte,  error) {
+		  return _AintGateway.Contract.MINTERROLE(&_AintGateway.CallOpts )
 		}
 	
 		// WithdrawCount is a free data retrieval call binding the contract method 0xfad72d12.
 		//
 		// Solidity: function _withdrawCount(address ) view returns(uint8)
-		func (_Aint-gateway *Aint-gatewayCaller) WithdrawCount(opts *bind.CallOpts , arg0 common.Address ) (uint8, error) {
+		func (_AintGateway *AintGatewayCaller) WithdrawCount(opts *bind.CallOpts , arg0 common.Address ) (uint8, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "_withdrawCount" , arg0)
+			err := _AintGateway.contract.Call(opts, &out, "_withdrawCount" , arg0)
 			
 			if err != nil {
 				return *new(uint8),  err
@@ -271,23 +271,23 @@ var (
 		// WithdrawCount is a free data retrieval call binding the contract method 0xfad72d12.
 		//
 		// Solidity: function _withdrawCount(address ) view returns(uint8)
-		func (_Aint-gateway *Aint-gatewaySession) WithdrawCount( arg0 common.Address ) ( uint8,  error) {
-		  return _Aint-gateway.Contract.WithdrawCount(&_Aint-gateway.CallOpts , arg0)
+		func (_AintGateway *AintGatewaySession) WithdrawCount( arg0 common.Address ) ( uint8,  error) {
+		  return _AintGateway.Contract.WithdrawCount(&_AintGateway.CallOpts , arg0)
 		}
 
 		// WithdrawCount is a free data retrieval call binding the contract method 0xfad72d12.
 		//
 		// Solidity: function _withdrawCount(address ) view returns(uint8)
-		func (_Aint-gateway *Aint-gatewayCallerSession) WithdrawCount( arg0 common.Address ) ( uint8,  error) {
-		  return _Aint-gateway.Contract.WithdrawCount(&_Aint-gateway.CallOpts , arg0)
+		func (_AintGateway *AintGatewayCallerSession) WithdrawCount( arg0 common.Address ) ( uint8,  error) {
+		  return _AintGateway.Contract.WithdrawCount(&_AintGateway.CallOpts , arg0)
 		}
 	
 		// Withdraws is a free data retrieval call binding the contract method 0x2590983b.
 		//
 		// Solidity: function _withdraws(address ) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCaller) Withdraws(opts *bind.CallOpts , arg0 common.Address ) (*big.Int, error) {
+		func (_AintGateway *AintGatewayCaller) Withdraws(opts *bind.CallOpts , arg0 common.Address ) (*big.Int, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "_withdraws" , arg0)
+			err := _AintGateway.contract.Call(opts, &out, "_withdraws" , arg0)
 			
 			if err != nil {
 				return *new(*big.Int),  err
@@ -302,23 +302,23 @@ var (
 		// Withdraws is a free data retrieval call binding the contract method 0x2590983b.
 		//
 		// Solidity: function _withdraws(address ) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewaySession) Withdraws( arg0 common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.Withdraws(&_Aint-gateway.CallOpts , arg0)
+		func (_AintGateway *AintGatewaySession) Withdraws( arg0 common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.Withdraws(&_AintGateway.CallOpts , arg0)
 		}
 
 		// Withdraws is a free data retrieval call binding the contract method 0x2590983b.
 		//
 		// Solidity: function _withdraws(address ) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Withdraws( arg0 common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.Withdraws(&_Aint-gateway.CallOpts , arg0)
+		func (_AintGateway *AintGatewayCallerSession) Withdraws( arg0 common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.Withdraws(&_AintGateway.CallOpts , arg0)
 		}
 	
 		// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 		//
 		// Solidity: function allowance(address owner, address spender) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCaller) Allowance(opts *bind.CallOpts , owner common.Address , spender common.Address ) (*big.Int, error) {
+		func (_AintGateway *AintGatewayCaller) Allowance(opts *bind.CallOpts , owner common.Address , spender common.Address ) (*big.Int, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "allowance" , owner, spender)
+			err := _AintGateway.contract.Call(opts, &out, "allowance" , owner, spender)
 			
 			if err != nil {
 				return *new(*big.Int),  err
@@ -333,23 +333,23 @@ var (
 		// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 		//
 		// Solidity: function allowance(address owner, address spender) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewaySession) Allowance( owner common.Address , spender common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.Allowance(&_Aint-gateway.CallOpts , owner, spender)
+		func (_AintGateway *AintGatewaySession) Allowance( owner common.Address , spender common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.Allowance(&_AintGateway.CallOpts , owner, spender)
 		}
 
 		// Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 		//
 		// Solidity: function allowance(address owner, address spender) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Allowance( owner common.Address , spender common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.Allowance(&_Aint-gateway.CallOpts , owner, spender)
+		func (_AintGateway *AintGatewayCallerSession) Allowance( owner common.Address , spender common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.Allowance(&_AintGateway.CallOpts , owner, spender)
 		}
 	
 		// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 		//
 		// Solidity: function balanceOf(address account) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCaller) BalanceOf(opts *bind.CallOpts , account common.Address ) (*big.Int, error) {
+		func (_AintGateway *AintGatewayCaller) BalanceOf(opts *bind.CallOpts , account common.Address ) (*big.Int, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "balanceOf" , account)
+			err := _AintGateway.contract.Call(opts, &out, "balanceOf" , account)
 			
 			if err != nil {
 				return *new(*big.Int),  err
@@ -364,23 +364,23 @@ var (
 		// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 		//
 		// Solidity: function balanceOf(address account) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewaySession) BalanceOf( account common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.BalanceOf(&_Aint-gateway.CallOpts , account)
+		func (_AintGateway *AintGatewaySession) BalanceOf( account common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.BalanceOf(&_AintGateway.CallOpts , account)
 		}
 
 		// BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 		//
 		// Solidity: function balanceOf(address account) view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCallerSession) BalanceOf( account common.Address ) ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.BalanceOf(&_Aint-gateway.CallOpts , account)
+		func (_AintGateway *AintGatewayCallerSession) BalanceOf( account common.Address ) ( *big.Int,  error) {
+		  return _AintGateway.Contract.BalanceOf(&_AintGateway.CallOpts , account)
 		}
 	
 		// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 		//
 		// Solidity: function decimals() view returns(uint8)
-		func (_Aint-gateway *Aint-gatewayCaller) Decimals(opts *bind.CallOpts ) (uint8, error) {
+		func (_AintGateway *AintGatewayCaller) Decimals(opts *bind.CallOpts ) (uint8, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "decimals" )
+			err := _AintGateway.contract.Call(opts, &out, "decimals" )
 			
 			if err != nil {
 				return *new(uint8),  err
@@ -395,23 +395,23 @@ var (
 		// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 		//
 		// Solidity: function decimals() view returns(uint8)
-		func (_Aint-gateway *Aint-gatewaySession) Decimals() ( uint8,  error) {
-		  return _Aint-gateway.Contract.Decimals(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) Decimals() ( uint8,  error) {
+		  return _AintGateway.Contract.Decimals(&_AintGateway.CallOpts )
 		}
 
 		// Decimals is a free data retrieval call binding the contract method 0x313ce567.
 		//
 		// Solidity: function decimals() view returns(uint8)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Decimals() ( uint8,  error) {
-		  return _Aint-gateway.Contract.Decimals(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) Decimals() ( uint8,  error) {
+		  return _AintGateway.Contract.Decimals(&_AintGateway.CallOpts )
 		}
 	
 		// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 		//
 		// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCaller) GetRoleAdmin(opts *bind.CallOpts , role [32]byte ) ([32]byte, error) {
+		func (_AintGateway *AintGatewayCaller) GetRoleAdmin(opts *bind.CallOpts , role [32]byte ) ([32]byte, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "getRoleAdmin" , role)
+			err := _AintGateway.contract.Call(opts, &out, "getRoleAdmin" , role)
 			
 			if err != nil {
 				return *new([32]byte),  err
@@ -426,23 +426,23 @@ var (
 		// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 		//
 		// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewaySession) GetRoleAdmin( role [32]byte ) ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.GetRoleAdmin(&_Aint-gateway.CallOpts , role)
+		func (_AintGateway *AintGatewaySession) GetRoleAdmin( role [32]byte ) ( [32]byte,  error) {
+		  return _AintGateway.Contract.GetRoleAdmin(&_AintGateway.CallOpts , role)
 		}
 
 		// GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 		//
 		// Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-		func (_Aint-gateway *Aint-gatewayCallerSession) GetRoleAdmin( role [32]byte ) ( [32]byte,  error) {
-		  return _Aint-gateway.Contract.GetRoleAdmin(&_Aint-gateway.CallOpts , role)
+		func (_AintGateway *AintGatewayCallerSession) GetRoleAdmin( role [32]byte ) ( [32]byte,  error) {
+		  return _AintGateway.Contract.GetRoleAdmin(&_AintGateway.CallOpts , role)
 		}
 	
 		// GetWithdrawFee is a free data retrieval call binding the contract method 0x1540aa89.
 		//
 		// Solidity: function getWithdrawFee() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCaller) GetWithdrawFee(opts *bind.CallOpts ) (*big.Int, error) {
+		func (_AintGateway *AintGatewayCaller) GetWithdrawFee(opts *bind.CallOpts ) (*big.Int, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "getWithdrawFee" )
+			err := _AintGateway.contract.Call(opts, &out, "getWithdrawFee" )
 			
 			if err != nil {
 				return *new(*big.Int),  err
@@ -457,23 +457,23 @@ var (
 		// GetWithdrawFee is a free data retrieval call binding the contract method 0x1540aa89.
 		//
 		// Solidity: function getWithdrawFee() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewaySession) GetWithdrawFee() ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.GetWithdrawFee(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) GetWithdrawFee() ( *big.Int,  error) {
+		  return _AintGateway.Contract.GetWithdrawFee(&_AintGateway.CallOpts )
 		}
 
 		// GetWithdrawFee is a free data retrieval call binding the contract method 0x1540aa89.
 		//
 		// Solidity: function getWithdrawFee() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCallerSession) GetWithdrawFee() ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.GetWithdrawFee(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) GetWithdrawFee() ( *big.Int,  error) {
+		  return _AintGateway.Contract.GetWithdrawFee(&_AintGateway.CallOpts )
 		}
 	
 		// HasRole is a free data retrieval call binding the contract method 0x91d14854.
 		//
 		// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCaller) HasRole(opts *bind.CallOpts , role [32]byte , account common.Address ) (bool, error) {
+		func (_AintGateway *AintGatewayCaller) HasRole(opts *bind.CallOpts , role [32]byte , account common.Address ) (bool, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "hasRole" , role, account)
+			err := _AintGateway.contract.Call(opts, &out, "hasRole" , role, account)
 			
 			if err != nil {
 				return *new(bool),  err
@@ -488,23 +488,23 @@ var (
 		// HasRole is a free data retrieval call binding the contract method 0x91d14854.
 		//
 		// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) HasRole( role [32]byte , account common.Address ) ( bool,  error) {
-		  return _Aint-gateway.Contract.HasRole(&_Aint-gateway.CallOpts , role, account)
+		func (_AintGateway *AintGatewaySession) HasRole( role [32]byte , account common.Address ) ( bool,  error) {
+		  return _AintGateway.Contract.HasRole(&_AintGateway.CallOpts , role, account)
 		}
 
 		// HasRole is a free data retrieval call binding the contract method 0x91d14854.
 		//
 		// Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCallerSession) HasRole( role [32]byte , account common.Address ) ( bool,  error) {
-		  return _Aint-gateway.Contract.HasRole(&_Aint-gateway.CallOpts , role, account)
+		func (_AintGateway *AintGatewayCallerSession) HasRole( role [32]byte , account common.Address ) ( bool,  error) {
+		  return _AintGateway.Contract.HasRole(&_AintGateway.CallOpts , role, account)
 		}
 	
 		// Name is a free data retrieval call binding the contract method 0x06fdde03.
 		//
 		// Solidity: function name() view returns(string)
-		func (_Aint-gateway *Aint-gatewayCaller) Name(opts *bind.CallOpts ) (string, error) {
+		func (_AintGateway *AintGatewayCaller) Name(opts *bind.CallOpts ) (string, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "name" )
+			err := _AintGateway.contract.Call(opts, &out, "name" )
 			
 			if err != nil {
 				return *new(string),  err
@@ -519,23 +519,23 @@ var (
 		// Name is a free data retrieval call binding the contract method 0x06fdde03.
 		//
 		// Solidity: function name() view returns(string)
-		func (_Aint-gateway *Aint-gatewaySession) Name() ( string,  error) {
-		  return _Aint-gateway.Contract.Name(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) Name() ( string,  error) {
+		  return _AintGateway.Contract.Name(&_AintGateway.CallOpts )
 		}
 
 		// Name is a free data retrieval call binding the contract method 0x06fdde03.
 		//
 		// Solidity: function name() view returns(string)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Name() ( string,  error) {
-		  return _Aint-gateway.Contract.Name(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) Name() ( string,  error) {
+		  return _AintGateway.Contract.Name(&_AintGateway.CallOpts )
 		}
 	
 		// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 		//
 		// Solidity: function owner() view returns(address)
-		func (_Aint-gateway *Aint-gatewayCaller) Owner(opts *bind.CallOpts ) (common.Address, error) {
+		func (_AintGateway *AintGatewayCaller) Owner(opts *bind.CallOpts ) (common.Address, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "owner" )
+			err := _AintGateway.contract.Call(opts, &out, "owner" )
 			
 			if err != nil {
 				return *new(common.Address),  err
@@ -550,23 +550,23 @@ var (
 		// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 		//
 		// Solidity: function owner() view returns(address)
-		func (_Aint-gateway *Aint-gatewaySession) Owner() ( common.Address,  error) {
-		  return _Aint-gateway.Contract.Owner(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) Owner() ( common.Address,  error) {
+		  return _AintGateway.Contract.Owner(&_AintGateway.CallOpts )
 		}
 
 		// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
 		//
 		// Solidity: function owner() view returns(address)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Owner() ( common.Address,  error) {
-		  return _Aint-gateway.Contract.Owner(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) Owner() ( common.Address,  error) {
+		  return _AintGateway.Contract.Owner(&_AintGateway.CallOpts )
 		}
 	
 		// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 		//
 		// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCaller) SupportsInterface(opts *bind.CallOpts , interfaceId [4]byte ) (bool, error) {
+		func (_AintGateway *AintGatewayCaller) SupportsInterface(opts *bind.CallOpts , interfaceId [4]byte ) (bool, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "supportsInterface" , interfaceId)
+			err := _AintGateway.contract.Call(opts, &out, "supportsInterface" , interfaceId)
 			
 			if err != nil {
 				return *new(bool),  err
@@ -581,23 +581,23 @@ var (
 		// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 		//
 		// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) SupportsInterface( interfaceId [4]byte ) ( bool,  error) {
-		  return _Aint-gateway.Contract.SupportsInterface(&_Aint-gateway.CallOpts , interfaceId)
+		func (_AintGateway *AintGatewaySession) SupportsInterface( interfaceId [4]byte ) ( bool,  error) {
+		  return _AintGateway.Contract.SupportsInterface(&_AintGateway.CallOpts , interfaceId)
 		}
 
 		// SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 		//
 		// Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCallerSession) SupportsInterface( interfaceId [4]byte ) ( bool,  error) {
-		  return _Aint-gateway.Contract.SupportsInterface(&_Aint-gateway.CallOpts , interfaceId)
+		func (_AintGateway *AintGatewayCallerSession) SupportsInterface( interfaceId [4]byte ) ( bool,  error) {
+		  return _AintGateway.Contract.SupportsInterface(&_AintGateway.CallOpts , interfaceId)
 		}
 	
 		// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 		//
 		// Solidity: function symbol() view returns(string)
-		func (_Aint-gateway *Aint-gatewayCaller) Symbol(opts *bind.CallOpts ) (string, error) {
+		func (_AintGateway *AintGatewayCaller) Symbol(opts *bind.CallOpts ) (string, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "symbol" )
+			err := _AintGateway.contract.Call(opts, &out, "symbol" )
 			
 			if err != nil {
 				return *new(string),  err
@@ -612,23 +612,23 @@ var (
 		// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 		//
 		// Solidity: function symbol() view returns(string)
-		func (_Aint-gateway *Aint-gatewaySession) Symbol() ( string,  error) {
-		  return _Aint-gateway.Contract.Symbol(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) Symbol() ( string,  error) {
+		  return _AintGateway.Contract.Symbol(&_AintGateway.CallOpts )
 		}
 
 		// Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 		//
 		// Solidity: function symbol() view returns(string)
-		func (_Aint-gateway *Aint-gatewayCallerSession) Symbol() ( string,  error) {
-		  return _Aint-gateway.Contract.Symbol(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) Symbol() ( string,  error) {
+		  return _AintGateway.Contract.Symbol(&_AintGateway.CallOpts )
 		}
 	
 		// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 		//
 		// Solidity: function totalSupply() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCaller) TotalSupply(opts *bind.CallOpts ) (*big.Int, error) {
+		func (_AintGateway *AintGatewayCaller) TotalSupply(opts *bind.CallOpts ) (*big.Int, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "totalSupply" )
+			err := _AintGateway.contract.Call(opts, &out, "totalSupply" )
 			
 			if err != nil {
 				return *new(*big.Int),  err
@@ -643,23 +643,23 @@ var (
 		// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 		//
 		// Solidity: function totalSupply() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewaySession) TotalSupply() ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.TotalSupply(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewaySession) TotalSupply() ( *big.Int,  error) {
+		  return _AintGateway.Contract.TotalSupply(&_AintGateway.CallOpts )
 		}
 
 		// TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 		//
 		// Solidity: function totalSupply() view returns(uint256)
-		func (_Aint-gateway *Aint-gatewayCallerSession) TotalSupply() ( *big.Int,  error) {
-		  return _Aint-gateway.Contract.TotalSupply(&_Aint-gateway.CallOpts )
+		func (_AintGateway *AintGatewayCallerSession) TotalSupply() ( *big.Int,  error) {
+		  return _AintGateway.Contract.TotalSupply(&_AintGateway.CallOpts )
 		}
 	
 		// WithdrawExists is a free data retrieval call binding the contract method 0x90cde51e.
 		//
 		// Solidity: function withdrawExists(address addr) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCaller) WithdrawExists(opts *bind.CallOpts , addr common.Address ) (bool, error) {
+		func (_AintGateway *AintGatewayCaller) WithdrawExists(opts *bind.CallOpts , addr common.Address ) (bool, error) {
 			var out []interface{}
-			err := _Aint-gateway.contract.Call(opts, &out, "withdrawExists" , addr)
+			err := _AintGateway.contract.Call(opts, &out, "withdrawExists" , addr)
 			
 			if err != nil {
 				return *new(bool),  err
@@ -674,15 +674,15 @@ var (
 		// WithdrawExists is a free data retrieval call binding the contract method 0x90cde51e.
 		//
 		// Solidity: function withdrawExists(address addr) view returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) WithdrawExists( addr common.Address ) ( bool,  error) {
-		  return _Aint-gateway.Contract.WithdrawExists(&_Aint-gateway.CallOpts , addr)
+		func (_AintGateway *AintGatewaySession) WithdrawExists( addr common.Address ) ( bool,  error) {
+		  return _AintGateway.Contract.WithdrawExists(&_AintGateway.CallOpts , addr)
 		}
 
 		// WithdrawExists is a free data retrieval call binding the contract method 0x90cde51e.
 		//
 		// Solidity: function withdrawExists(address addr) view returns(bool)
-		func (_Aint-gateway *Aint-gatewayCallerSession) WithdrawExists( addr common.Address ) ( bool,  error) {
-		  return _Aint-gateway.Contract.WithdrawExists(&_Aint-gateway.CallOpts , addr)
+		func (_AintGateway *AintGatewayCallerSession) WithdrawExists( addr common.Address ) ( bool,  error) {
+		  return _AintGateway.Contract.WithdrawExists(&_AintGateway.CallOpts , addr)
 		}
 	
 
@@ -690,316 +690,316 @@ var (
 		// AddWithdraw is a paid mutator transaction binding the contract method 0xf389a512.
 		//
 		// Solidity: function addWithdraw(address addr, uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) AddWithdraw(opts *bind.TransactOpts , addr common.Address , amount *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "addWithdraw" , addr, amount)
+		func (_AintGateway *AintGatewayTransactor) AddWithdraw(opts *bind.TransactOpts , addr common.Address , amount *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "addWithdraw" , addr, amount)
 		}
 
 		// AddWithdraw is a paid mutator transaction binding the contract method 0xf389a512.
 		//
 		// Solidity: function addWithdraw(address addr, uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewaySession) AddWithdraw( addr common.Address , amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.AddWithdraw(&_Aint-gateway.TransactOpts , addr, amount)
+		func (_AintGateway *AintGatewaySession) AddWithdraw( addr common.Address , amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.AddWithdraw(&_AintGateway.TransactOpts , addr, amount)
 		}
 
 		// AddWithdraw is a paid mutator transaction binding the contract method 0xf389a512.
 		//
 		// Solidity: function addWithdraw(address addr, uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) AddWithdraw( addr common.Address , amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.AddWithdraw(&_Aint-gateway.TransactOpts , addr, amount)
+		func (_AintGateway *AintGatewayTransactorSession) AddWithdraw( addr common.Address , amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.AddWithdraw(&_AintGateway.TransactOpts , addr, amount)
 		}
 	
 		// Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 		//
 		// Solidity: function approve(address spender, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactor) Approve(opts *bind.TransactOpts , spender common.Address , value *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "approve" , spender, value)
+		func (_AintGateway *AintGatewayTransactor) Approve(opts *bind.TransactOpts , spender common.Address , value *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "approve" , spender, value)
 		}
 
 		// Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 		//
 		// Solidity: function approve(address spender, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) Approve( spender common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Approve(&_Aint-gateway.TransactOpts , spender, value)
+		func (_AintGateway *AintGatewaySession) Approve( spender common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Approve(&_AintGateway.TransactOpts , spender, value)
 		}
 
 		// Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 		//
 		// Solidity: function approve(address spender, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactorSession) Approve( spender common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Approve(&_Aint-gateway.TransactOpts , spender, value)
+		func (_AintGateway *AintGatewayTransactorSession) Approve( spender common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Approve(&_AintGateway.TransactOpts , spender, value)
 		}
 	
 		// Burn is a paid mutator transaction binding the contract method 0x42966c68.
 		//
 		// Solidity: function burn(uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) Burn(opts *bind.TransactOpts , value *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "burn" , value)
+		func (_AintGateway *AintGatewayTransactor) Burn(opts *bind.TransactOpts , value *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "burn" , value)
 		}
 
 		// Burn is a paid mutator transaction binding the contract method 0x42966c68.
 		//
 		// Solidity: function burn(uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewaySession) Burn( value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Burn(&_Aint-gateway.TransactOpts , value)
+		func (_AintGateway *AintGatewaySession) Burn( value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Burn(&_AintGateway.TransactOpts , value)
 		}
 
 		// Burn is a paid mutator transaction binding the contract method 0x42966c68.
 		//
 		// Solidity: function burn(uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) Burn( value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Burn(&_Aint-gateway.TransactOpts , value)
+		func (_AintGateway *AintGatewayTransactorSession) Burn( value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Burn(&_AintGateway.TransactOpts , value)
 		}
 	
 		// BurnFrom is a paid mutator transaction binding the contract method 0x79cc6790.
 		//
 		// Solidity: function burnFrom(address account, uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) BurnFrom(opts *bind.TransactOpts , account common.Address , value *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "burnFrom" , account, value)
+		func (_AintGateway *AintGatewayTransactor) BurnFrom(opts *bind.TransactOpts , account common.Address , value *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "burnFrom" , account, value)
 		}
 
 		// BurnFrom is a paid mutator transaction binding the contract method 0x79cc6790.
 		//
 		// Solidity: function burnFrom(address account, uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewaySession) BurnFrom( account common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.BurnFrom(&_Aint-gateway.TransactOpts , account, value)
+		func (_AintGateway *AintGatewaySession) BurnFrom( account common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.BurnFrom(&_AintGateway.TransactOpts , account, value)
 		}
 
 		// BurnFrom is a paid mutator transaction binding the contract method 0x79cc6790.
 		//
 		// Solidity: function burnFrom(address account, uint256 value) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) BurnFrom( account common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.BurnFrom(&_Aint-gateway.TransactOpts , account, value)
+		func (_AintGateway *AintGatewayTransactorSession) BurnFrom( account common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.BurnFrom(&_AintGateway.TransactOpts , account, value)
 		}
 	
 		// CancelWithdraw is a paid mutator transaction binding the contract method 0xe9919629.
 		//
 		// Solidity: function cancelWithdraw(address addr) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) CancelWithdraw(opts *bind.TransactOpts , addr common.Address ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "cancelWithdraw" , addr)
+		func (_AintGateway *AintGatewayTransactor) CancelWithdraw(opts *bind.TransactOpts , addr common.Address ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "cancelWithdraw" , addr)
 		}
 
 		// CancelWithdraw is a paid mutator transaction binding the contract method 0xe9919629.
 		//
 		// Solidity: function cancelWithdraw(address addr) returns()
-		func (_Aint-gateway *Aint-gatewaySession) CancelWithdraw( addr common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.CancelWithdraw(&_Aint-gateway.TransactOpts , addr)
+		func (_AintGateway *AintGatewaySession) CancelWithdraw( addr common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.CancelWithdraw(&_AintGateway.TransactOpts , addr)
 		}
 
 		// CancelWithdraw is a paid mutator transaction binding the contract method 0xe9919629.
 		//
 		// Solidity: function cancelWithdraw(address addr) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) CancelWithdraw( addr common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.CancelWithdraw(&_Aint-gateway.TransactOpts , addr)
+		func (_AintGateway *AintGatewayTransactorSession) CancelWithdraw( addr common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.CancelWithdraw(&_AintGateway.TransactOpts , addr)
 		}
 	
 		// Deposit is a paid mutator transaction binding the contract method 0x8e27d719.
 		//
 		// Solidity: function deposit(string to, uint256 amount) returns(string)
-		func (_Aint-gateway *Aint-gatewayTransactor) Deposit(opts *bind.TransactOpts , to string , amount *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "deposit" , to, amount)
+		func (_AintGateway *AintGatewayTransactor) Deposit(opts *bind.TransactOpts , to string , amount *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "deposit" , to, amount)
 		}
 
 		// Deposit is a paid mutator transaction binding the contract method 0x8e27d719.
 		//
 		// Solidity: function deposit(string to, uint256 amount) returns(string)
-		func (_Aint-gateway *Aint-gatewaySession) Deposit( to string , amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Deposit(&_Aint-gateway.TransactOpts , to, amount)
+		func (_AintGateway *AintGatewaySession) Deposit( to string , amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Deposit(&_AintGateway.TransactOpts , to, amount)
 		}
 
 		// Deposit is a paid mutator transaction binding the contract method 0x8e27d719.
 		//
 		// Solidity: function deposit(string to, uint256 amount) returns(string)
-		func (_Aint-gateway *Aint-gatewayTransactorSession) Deposit( to string , amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Deposit(&_Aint-gateway.TransactOpts , to, amount)
+		func (_AintGateway *AintGatewayTransactorSession) Deposit( to string , amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Deposit(&_AintGateway.TransactOpts , to, amount)
 		}
 	
 		// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 		//
 		// Solidity: function grantRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) GrantRole(opts *bind.TransactOpts , role [32]byte , account common.Address ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "grantRole" , role, account)
+		func (_AintGateway *AintGatewayTransactor) GrantRole(opts *bind.TransactOpts , role [32]byte , account common.Address ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "grantRole" , role, account)
 		}
 
 		// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 		//
 		// Solidity: function grantRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewaySession) GrantRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.GrantRole(&_Aint-gateway.TransactOpts , role, account)
+		func (_AintGateway *AintGatewaySession) GrantRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.GrantRole(&_AintGateway.TransactOpts , role, account)
 		}
 
 		// GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 		//
 		// Solidity: function grantRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) GrantRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.GrantRole(&_Aint-gateway.TransactOpts , role, account)
+		func (_AintGateway *AintGatewayTransactorSession) GrantRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.GrantRole(&_AintGateway.TransactOpts , role, account)
 		}
 	
 		// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 		//
 		// Solidity: function renounceOwnership() returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) RenounceOwnership(opts *bind.TransactOpts ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "renounceOwnership" )
+		func (_AintGateway *AintGatewayTransactor) RenounceOwnership(opts *bind.TransactOpts ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "renounceOwnership" )
 		}
 
 		// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 		//
 		// Solidity: function renounceOwnership() returns()
-		func (_Aint-gateway *Aint-gatewaySession) RenounceOwnership() (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RenounceOwnership(&_Aint-gateway.TransactOpts )
+		func (_AintGateway *AintGatewaySession) RenounceOwnership() (*types.Transaction, error) {
+		  return _AintGateway.Contract.RenounceOwnership(&_AintGateway.TransactOpts )
 		}
 
 		// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 		//
 		// Solidity: function renounceOwnership() returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) RenounceOwnership() (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RenounceOwnership(&_Aint-gateway.TransactOpts )
+		func (_AintGateway *AintGatewayTransactorSession) RenounceOwnership() (*types.Transaction, error) {
+		  return _AintGateway.Contract.RenounceOwnership(&_AintGateway.TransactOpts )
 		}
 	
 		// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 		//
 		// Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) RenounceRole(opts *bind.TransactOpts , role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "renounceRole" , role, callerConfirmation)
+		func (_AintGateway *AintGatewayTransactor) RenounceRole(opts *bind.TransactOpts , role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "renounceRole" , role, callerConfirmation)
 		}
 
 		// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 		//
 		// Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-		func (_Aint-gateway *Aint-gatewaySession) RenounceRole( role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RenounceRole(&_Aint-gateway.TransactOpts , role, callerConfirmation)
+		func (_AintGateway *AintGatewaySession) RenounceRole( role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.RenounceRole(&_AintGateway.TransactOpts , role, callerConfirmation)
 		}
 
 		// RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 		//
 		// Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) RenounceRole( role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RenounceRole(&_Aint-gateway.TransactOpts , role, callerConfirmation)
+		func (_AintGateway *AintGatewayTransactorSession) RenounceRole( role [32]byte , callerConfirmation common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.RenounceRole(&_AintGateway.TransactOpts , role, callerConfirmation)
 		}
 	
 		// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 		//
 		// Solidity: function revokeRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) RevokeRole(opts *bind.TransactOpts , role [32]byte , account common.Address ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "revokeRole" , role, account)
+		func (_AintGateway *AintGatewayTransactor) RevokeRole(opts *bind.TransactOpts , role [32]byte , account common.Address ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "revokeRole" , role, account)
 		}
 
 		// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 		//
 		// Solidity: function revokeRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewaySession) RevokeRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RevokeRole(&_Aint-gateway.TransactOpts , role, account)
+		func (_AintGateway *AintGatewaySession) RevokeRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.RevokeRole(&_AintGateway.TransactOpts , role, account)
 		}
 
 		// RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 		//
 		// Solidity: function revokeRole(bytes32 role, address account) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) RevokeRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.RevokeRole(&_Aint-gateway.TransactOpts , role, account)
+		func (_AintGateway *AintGatewayTransactorSession) RevokeRole( role [32]byte , account common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.RevokeRole(&_AintGateway.TransactOpts , role, account)
 		}
 	
 		// SetWithdrawFee is a paid mutator transaction binding the contract method 0xb6ac642a.
 		//
 		// Solidity: function setWithdrawFee(uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) SetWithdrawFee(opts *bind.TransactOpts , amount *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "setWithdrawFee" , amount)
+		func (_AintGateway *AintGatewayTransactor) SetWithdrawFee(opts *bind.TransactOpts , amount *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "setWithdrawFee" , amount)
 		}
 
 		// SetWithdrawFee is a paid mutator transaction binding the contract method 0xb6ac642a.
 		//
 		// Solidity: function setWithdrawFee(uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewaySession) SetWithdrawFee( amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.SetWithdrawFee(&_Aint-gateway.TransactOpts , amount)
+		func (_AintGateway *AintGatewaySession) SetWithdrawFee( amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.SetWithdrawFee(&_AintGateway.TransactOpts , amount)
 		}
 
 		// SetWithdrawFee is a paid mutator transaction binding the contract method 0xb6ac642a.
 		//
 		// Solidity: function setWithdrawFee(uint256 amount) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) SetWithdrawFee( amount *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.SetWithdrawFee(&_Aint-gateway.TransactOpts , amount)
+		func (_AintGateway *AintGatewayTransactorSession) SetWithdrawFee( amount *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.SetWithdrawFee(&_AintGateway.TransactOpts , amount)
 		}
 	
 		// Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 		//
 		// Solidity: function transfer(address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactor) Transfer(opts *bind.TransactOpts , to common.Address , value *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "transfer" , to, value)
+		func (_AintGateway *AintGatewayTransactor) Transfer(opts *bind.TransactOpts , to common.Address , value *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "transfer" , to, value)
 		}
 
 		// Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 		//
 		// Solidity: function transfer(address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) Transfer( to common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Transfer(&_Aint-gateway.TransactOpts , to, value)
+		func (_AintGateway *AintGatewaySession) Transfer( to common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Transfer(&_AintGateway.TransactOpts , to, value)
 		}
 
 		// Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 		//
 		// Solidity: function transfer(address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactorSession) Transfer( to common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Transfer(&_Aint-gateway.TransactOpts , to, value)
+		func (_AintGateway *AintGatewayTransactorSession) Transfer( to common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.Transfer(&_AintGateway.TransactOpts , to, value)
 		}
 	
 		// TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 		//
 		// Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactor) TransferFrom(opts *bind.TransactOpts , from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "transferFrom" , from, to, value)
+		func (_AintGateway *AintGatewayTransactor) TransferFrom(opts *bind.TransactOpts , from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "transferFrom" , from, to, value)
 		}
 
 		// TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 		//
 		// Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewaySession) TransferFrom( from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.TransferFrom(&_Aint-gateway.TransactOpts , from, to, value)
+		func (_AintGateway *AintGatewaySession) TransferFrom( from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.TransferFrom(&_AintGateway.TransactOpts , from, to, value)
 		}
 
 		// TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 		//
 		// Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-		func (_Aint-gateway *Aint-gatewayTransactorSession) TransferFrom( from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.TransferFrom(&_Aint-gateway.TransactOpts , from, to, value)
+		func (_AintGateway *AintGatewayTransactorSession) TransferFrom( from common.Address , to common.Address , value *big.Int ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.TransferFrom(&_AintGateway.TransactOpts , from, to, value)
 		}
 	
 		// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 		//
 		// Solidity: function transferOwnership(address newOwner) returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) TransferOwnership(opts *bind.TransactOpts , newOwner common.Address ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "transferOwnership" , newOwner)
+		func (_AintGateway *AintGatewayTransactor) TransferOwnership(opts *bind.TransactOpts , newOwner common.Address ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "transferOwnership" , newOwner)
 		}
 
 		// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 		//
 		// Solidity: function transferOwnership(address newOwner) returns()
-		func (_Aint-gateway *Aint-gatewaySession) TransferOwnership( newOwner common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.TransferOwnership(&_Aint-gateway.TransactOpts , newOwner)
+		func (_AintGateway *AintGatewaySession) TransferOwnership( newOwner common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.TransferOwnership(&_AintGateway.TransactOpts , newOwner)
 		}
 
 		// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 		//
 		// Solidity: function transferOwnership(address newOwner) returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) TransferOwnership( newOwner common.Address ) (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.TransferOwnership(&_Aint-gateway.TransactOpts , newOwner)
+		func (_AintGateway *AintGatewayTransactorSession) TransferOwnership( newOwner common.Address ) (*types.Transaction, error) {
+		  return _AintGateway.Contract.TransferOwnership(&_AintGateway.TransactOpts , newOwner)
 		}
 	
 		// Withdraw is a paid mutator transaction binding the contract method 0x3ccfd60b.
 		//
 		// Solidity: function withdraw() payable returns()
-		func (_Aint-gateway *Aint-gatewayTransactor) Withdraw(opts *bind.TransactOpts ) (*types.Transaction, error) {
-			return _Aint-gateway.contract.Transact(opts, "withdraw" )
+		func (_AintGateway *AintGatewayTransactor) Withdraw(opts *bind.TransactOpts ) (*types.Transaction, error) {
+			return _AintGateway.contract.Transact(opts, "withdraw" )
 		}
 
 		// Withdraw is a paid mutator transaction binding the contract method 0x3ccfd60b.
 		//
 		// Solidity: function withdraw() payable returns()
-		func (_Aint-gateway *Aint-gatewaySession) Withdraw() (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Withdraw(&_Aint-gateway.TransactOpts )
+		func (_AintGateway *AintGatewaySession) Withdraw() (*types.Transaction, error) {
+		  return _AintGateway.Contract.Withdraw(&_AintGateway.TransactOpts )
 		}
 
 		// Withdraw is a paid mutator transaction binding the contract method 0x3ccfd60b.
 		//
 		// Solidity: function withdraw() payable returns()
-		func (_Aint-gateway *Aint-gatewayTransactorSession) Withdraw() (*types.Transaction, error) {
-		  return _Aint-gateway.Contract.Withdraw(&_Aint-gateway.TransactOpts )
+		func (_AintGateway *AintGatewayTransactorSession) Withdraw() (*types.Transaction, error) {
+		  return _AintGateway.Contract.Withdraw(&_AintGateway.TransactOpts )
 		}
 	
 
@@ -1008,9 +1008,9 @@ var (
 	
 
 	
-		// Aint-gatewayApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the Aint-gateway contract.
-		type Aint-gatewayApprovalIterator struct {
-			Event *Aint-gatewayApproval // Event containing the contract specifics and raw log
+		// AintGatewayApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the AintGateway contract.
+		type AintGatewayApprovalIterator struct {
+			Event *AintGatewayApproval // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1023,7 +1023,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayApprovalIterator) Next() bool {
+		func (it *AintGatewayApprovalIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1032,7 +1032,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayApproval)
+					it.Event = new(AintGatewayApproval)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1047,7 +1047,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayApproval)
+				it.Event = new(AintGatewayApproval)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1062,18 +1062,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayApprovalIterator) Error() error {
+		func (it *AintGatewayApprovalIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayApprovalIterator) Close() error {
+		func (it *AintGatewayApprovalIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayApproval represents a Approval event raised by the Aint-gateway contract.
-		type Aint-gatewayApproval struct { 
+		// AintGatewayApproval represents a Approval event raised by the AintGateway contract.
+		type AintGatewayApproval struct { 
 			Owner common.Address; 
 			Spender common.Address; 
 			Value *big.Int; 
@@ -1083,7 +1083,7 @@ var (
 		// FilterApproval is a free log retrieval operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 		//
 		// Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*Aint-gatewayApprovalIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*AintGatewayApprovalIterator, error) {
 			
 			var ownerRule []interface{}
 			for _, ownerItem := range owner {
@@ -1095,17 +1095,17 @@ var (
 			}
 			
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayApprovalIterator{contract: _Aint-gateway.contract, event: "Approval", logs: logs, sub: sub}, nil
+			return &AintGatewayApprovalIterator{contract: _AintGateway.contract, event: "Approval", logs: logs, sub: sub}, nil
  		}
 
 		// WatchApproval is a free log subscription operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 		//
 		// Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *Aint-gatewayApproval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *AintGatewayApproval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
 			
 			var ownerRule []interface{}
 			for _, ownerItem := range owner {
@@ -1117,7 +1117,7 @@ var (
 			}
 			
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1127,8 +1127,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayApproval)
-						if err := _Aint-gateway.contract.UnpackLog(event, "Approval", log); err != nil {
+						event := new(AintGatewayApproval)
+						if err := _AintGateway.contract.UnpackLog(event, "Approval", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1152,9 +1152,9 @@ var (
 		// ParseApproval is a log parse operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 		//
 		// Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseApproval(log types.Log) (*Aint-gatewayApproval, error) {
-			event := new(Aint-gatewayApproval)
-			if err := _Aint-gateway.contract.UnpackLog(event, "Approval", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseApproval(log types.Log) (*AintGatewayApproval, error) {
+			event := new(AintGatewayApproval)
+			if err := _AintGateway.contract.UnpackLog(event, "Approval", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
@@ -1162,9 +1162,9 @@ var (
 		}
 
  	
-		// Aint-gatewayOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Aint-gateway contract.
-		type Aint-gatewayOwnershipTransferredIterator struct {
-			Event *Aint-gatewayOwnershipTransferred // Event containing the contract specifics and raw log
+		// AintGatewayOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the AintGateway contract.
+		type AintGatewayOwnershipTransferredIterator struct {
+			Event *AintGatewayOwnershipTransferred // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1177,7 +1177,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayOwnershipTransferredIterator) Next() bool {
+		func (it *AintGatewayOwnershipTransferredIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1186,7 +1186,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayOwnershipTransferred)
+					it.Event = new(AintGatewayOwnershipTransferred)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1201,7 +1201,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayOwnershipTransferred)
+				it.Event = new(AintGatewayOwnershipTransferred)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1216,18 +1216,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayOwnershipTransferredIterator) Error() error {
+		func (it *AintGatewayOwnershipTransferredIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayOwnershipTransferredIterator) Close() error {
+		func (it *AintGatewayOwnershipTransferredIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayOwnershipTransferred represents a OwnershipTransferred event raised by the Aint-gateway contract.
-		type Aint-gatewayOwnershipTransferred struct { 
+		// AintGatewayOwnershipTransferred represents a OwnershipTransferred event raised by the AintGateway contract.
+		type AintGatewayOwnershipTransferred struct { 
 			PreviousOwner common.Address; 
 			NewOwner common.Address; 
 			Raw types.Log // Blockchain specific contextual infos
@@ -1236,7 +1236,7 @@ var (
 		// FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 		//
 		// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*Aint-gatewayOwnershipTransferredIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*AintGatewayOwnershipTransferredIterator, error) {
 			
 			var previousOwnerRule []interface{}
 			for _, previousOwnerItem := range previousOwner {
@@ -1247,17 +1247,17 @@ var (
 				newOwnerRule = append(newOwnerRule, newOwnerItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayOwnershipTransferredIterator{contract: _Aint-gateway.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
+			return &AintGatewayOwnershipTransferredIterator{contract: _AintGateway.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
  		}
 
 		// WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 		//
 		// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *Aint-gatewayOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *AintGatewayOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 			
 			var previousOwnerRule []interface{}
 			for _, previousOwnerItem := range previousOwner {
@@ -1268,7 +1268,7 @@ var (
 				newOwnerRule = append(newOwnerRule, newOwnerItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1278,8 +1278,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayOwnershipTransferred)
-						if err := _Aint-gateway.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+						event := new(AintGatewayOwnershipTransferred)
+						if err := _AintGateway.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1303,9 +1303,9 @@ var (
 		// ParseOwnershipTransferred is a log parse operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 		//
 		// Solidity: event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseOwnershipTransferred(log types.Log) (*Aint-gatewayOwnershipTransferred, error) {
-			event := new(Aint-gatewayOwnershipTransferred)
-			if err := _Aint-gateway.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseOwnershipTransferred(log types.Log) (*AintGatewayOwnershipTransferred, error) {
+			event := new(AintGatewayOwnershipTransferred)
+			if err := _AintGateway.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
@@ -1313,9 +1313,9 @@ var (
 		}
 
  	
-		// Aint-gatewayRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the Aint-gateway contract.
-		type Aint-gatewayRoleAdminChangedIterator struct {
-			Event *Aint-gatewayRoleAdminChanged // Event containing the contract specifics and raw log
+		// AintGatewayRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the AintGateway contract.
+		type AintGatewayRoleAdminChangedIterator struct {
+			Event *AintGatewayRoleAdminChanged // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1328,7 +1328,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayRoleAdminChangedIterator) Next() bool {
+		func (it *AintGatewayRoleAdminChangedIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1337,7 +1337,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayRoleAdminChanged)
+					it.Event = new(AintGatewayRoleAdminChanged)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1352,7 +1352,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayRoleAdminChanged)
+				it.Event = new(AintGatewayRoleAdminChanged)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1367,18 +1367,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayRoleAdminChangedIterator) Error() error {
+		func (it *AintGatewayRoleAdminChangedIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayRoleAdminChangedIterator) Close() error {
+		func (it *AintGatewayRoleAdminChangedIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayRoleAdminChanged represents a RoleAdminChanged event raised by the Aint-gateway contract.
-		type Aint-gatewayRoleAdminChanged struct { 
+		// AintGatewayRoleAdminChanged represents a RoleAdminChanged event raised by the AintGateway contract.
+		type AintGatewayRoleAdminChanged struct { 
 			Role [32]byte; 
 			PreviousAdminRole [32]byte; 
 			NewAdminRole [32]byte; 
@@ -1388,7 +1388,7 @@ var (
 		// FilterRoleAdminChanged is a free log retrieval operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 		//
 		// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*Aint-gatewayRoleAdminChangedIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*AintGatewayRoleAdminChangedIterator, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1403,17 +1403,17 @@ var (
 				newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayRoleAdminChangedIterator{contract: _Aint-gateway.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
+			return &AintGatewayRoleAdminChangedIterator{contract: _AintGateway.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
  		}
 
 		// WatchRoleAdminChanged is a free log subscription operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 		//
 		// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *Aint-gatewayRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *AintGatewayRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1428,7 +1428,7 @@ var (
 				newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1438,8 +1438,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayRoleAdminChanged)
-						if err := _Aint-gateway.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+						event := new(AintGatewayRoleAdminChanged)
+						if err := _AintGateway.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1463,9 +1463,9 @@ var (
 		// ParseRoleAdminChanged is a log parse operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 		//
 		// Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseRoleAdminChanged(log types.Log) (*Aint-gatewayRoleAdminChanged, error) {
-			event := new(Aint-gatewayRoleAdminChanged)
-			if err := _Aint-gateway.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseRoleAdminChanged(log types.Log) (*AintGatewayRoleAdminChanged, error) {
+			event := new(AintGatewayRoleAdminChanged)
+			if err := _AintGateway.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
@@ -1473,9 +1473,9 @@ var (
 		}
 
  	
-		// Aint-gatewayRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the Aint-gateway contract.
-		type Aint-gatewayRoleGrantedIterator struct {
-			Event *Aint-gatewayRoleGranted // Event containing the contract specifics and raw log
+		// AintGatewayRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the AintGateway contract.
+		type AintGatewayRoleGrantedIterator struct {
+			Event *AintGatewayRoleGranted // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1488,7 +1488,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayRoleGrantedIterator) Next() bool {
+		func (it *AintGatewayRoleGrantedIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1497,7 +1497,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayRoleGranted)
+					it.Event = new(AintGatewayRoleGranted)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1512,7 +1512,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayRoleGranted)
+				it.Event = new(AintGatewayRoleGranted)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1527,18 +1527,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayRoleGrantedIterator) Error() error {
+		func (it *AintGatewayRoleGrantedIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayRoleGrantedIterator) Close() error {
+		func (it *AintGatewayRoleGrantedIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayRoleGranted represents a RoleGranted event raised by the Aint-gateway contract.
-		type Aint-gatewayRoleGranted struct { 
+		// AintGatewayRoleGranted represents a RoleGranted event raised by the AintGateway contract.
+		type AintGatewayRoleGranted struct { 
 			Role [32]byte; 
 			Account common.Address; 
 			Sender common.Address; 
@@ -1548,7 +1548,7 @@ var (
 		// FilterRoleGranted is a free log retrieval operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 		//
 		// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*Aint-gatewayRoleGrantedIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*AintGatewayRoleGrantedIterator, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1563,17 +1563,17 @@ var (
 				senderRule = append(senderRule, senderItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayRoleGrantedIterator{contract: _Aint-gateway.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
+			return &AintGatewayRoleGrantedIterator{contract: _AintGateway.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
  		}
 
 		// WatchRoleGranted is a free log subscription operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 		//
 		// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *Aint-gatewayRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *AintGatewayRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1588,7 +1588,7 @@ var (
 				senderRule = append(senderRule, senderItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1598,8 +1598,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayRoleGranted)
-						if err := _Aint-gateway.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+						event := new(AintGatewayRoleGranted)
+						if err := _AintGateway.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1623,9 +1623,9 @@ var (
 		// ParseRoleGranted is a log parse operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 		//
 		// Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseRoleGranted(log types.Log) (*Aint-gatewayRoleGranted, error) {
-			event := new(Aint-gatewayRoleGranted)
-			if err := _Aint-gateway.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseRoleGranted(log types.Log) (*AintGatewayRoleGranted, error) {
+			event := new(AintGatewayRoleGranted)
+			if err := _AintGateway.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
@@ -1633,9 +1633,9 @@ var (
 		}
 
  	
-		// Aint-gatewayRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the Aint-gateway contract.
-		type Aint-gatewayRoleRevokedIterator struct {
-			Event *Aint-gatewayRoleRevoked // Event containing the contract specifics and raw log
+		// AintGatewayRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the AintGateway contract.
+		type AintGatewayRoleRevokedIterator struct {
+			Event *AintGatewayRoleRevoked // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1648,7 +1648,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayRoleRevokedIterator) Next() bool {
+		func (it *AintGatewayRoleRevokedIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1657,7 +1657,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayRoleRevoked)
+					it.Event = new(AintGatewayRoleRevoked)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1672,7 +1672,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayRoleRevoked)
+				it.Event = new(AintGatewayRoleRevoked)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1687,18 +1687,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayRoleRevokedIterator) Error() error {
+		func (it *AintGatewayRoleRevokedIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayRoleRevokedIterator) Close() error {
+		func (it *AintGatewayRoleRevokedIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayRoleRevoked represents a RoleRevoked event raised by the Aint-gateway contract.
-		type Aint-gatewayRoleRevoked struct { 
+		// AintGatewayRoleRevoked represents a RoleRevoked event raised by the AintGateway contract.
+		type AintGatewayRoleRevoked struct { 
 			Role [32]byte; 
 			Account common.Address; 
 			Sender common.Address; 
@@ -1708,7 +1708,7 @@ var (
 		// FilterRoleRevoked is a free log retrieval operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 		//
 		// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*Aint-gatewayRoleRevokedIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*AintGatewayRoleRevokedIterator, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1723,17 +1723,17 @@ var (
 				senderRule = append(senderRule, senderItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayRoleRevokedIterator{contract: _Aint-gateway.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
+			return &AintGatewayRoleRevokedIterator{contract: _AintGateway.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
  		}
 
 		// WatchRoleRevoked is a free log subscription operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 		//
 		// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *Aint-gatewayRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *AintGatewayRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 			
 			var roleRule []interface{}
 			for _, roleItem := range role {
@@ -1748,7 +1748,7 @@ var (
 				senderRule = append(senderRule, senderItem)
 			}
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1758,8 +1758,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayRoleRevoked)
-						if err := _Aint-gateway.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+						event := new(AintGatewayRoleRevoked)
+						if err := _AintGateway.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1783,9 +1783,9 @@ var (
 		// ParseRoleRevoked is a log parse operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 		//
 		// Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseRoleRevoked(log types.Log) (*Aint-gatewayRoleRevoked, error) {
-			event := new(Aint-gatewayRoleRevoked)
-			if err := _Aint-gateway.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseRoleRevoked(log types.Log) (*AintGatewayRoleRevoked, error) {
+			event := new(AintGatewayRoleRevoked)
+			if err := _AintGateway.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
@@ -1793,9 +1793,9 @@ var (
 		}
 
  	
-		// Aint-gatewayTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the Aint-gateway contract.
-		type Aint-gatewayTransferIterator struct {
-			Event *Aint-gatewayTransfer // Event containing the contract specifics and raw log
+		// AintGatewayTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the AintGateway contract.
+		type AintGatewayTransferIterator struct {
+			Event *AintGatewayTransfer // Event containing the contract specifics and raw log
 
 			contract *bind.BoundContract // Generic contract to use for unpacking event data
 			event    string              // Event name to use for unpacking event data
@@ -1808,7 +1808,7 @@ var (
 		// Next advances the iterator to the subsequent event, returning whether there
 		// are any more events found. In case of a retrieval or parsing error, false is
 		// returned and Error() can be queried for the exact failure.
-		func (it *Aint-gatewayTransferIterator) Next() bool {
+		func (it *AintGatewayTransferIterator) Next() bool {
 			// If the iterator failed, stop iterating
 			if (it.fail != nil) {
 				return false
@@ -1817,7 +1817,7 @@ var (
 			if (it.done) {
 				select {
 				case log := <-it.logs:
-					it.Event = new(Aint-gatewayTransfer)
+					it.Event = new(AintGatewayTransfer)
 					if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 						it.fail = err
 						return false
@@ -1832,7 +1832,7 @@ var (
 			// Iterator still in progress, wait for either a data or an error event
 			select {
 			case log := <-it.logs:
-				it.Event = new(Aint-gatewayTransfer)
+				it.Event = new(AintGatewayTransfer)
 				if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 					it.fail = err
 					return false
@@ -1847,18 +1847,18 @@ var (
 			}
 		}
 		// Error returns any retrieval or parsing error occurred during filtering.
-		func (it *Aint-gatewayTransferIterator) Error() error {
+		func (it *AintGatewayTransferIterator) Error() error {
 			return it.fail
 		}
 		// Close terminates the iteration process, releasing any pending underlying
 		// resources.
-		func (it *Aint-gatewayTransferIterator) Close() error {
+		func (it *AintGatewayTransferIterator) Close() error {
 			it.sub.Unsubscribe()
 			return nil
 		}
 
-		// Aint-gatewayTransfer represents a Transfer event raised by the Aint-gateway contract.
-		type Aint-gatewayTransfer struct { 
+		// AintGatewayTransfer represents a Transfer event raised by the AintGateway contract.
+		type AintGatewayTransfer struct { 
 			From common.Address; 
 			To common.Address; 
 			Value *big.Int; 
@@ -1868,7 +1868,7 @@ var (
 		// FilterTransfer is a free log retrieval operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 		//
 		// Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
- 		func (_Aint-gateway *Aint-gatewayFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*Aint-gatewayTransferIterator, error) {
+ 		func (_AintGateway *AintGatewayFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*AintGatewayTransferIterator, error) {
 			
 			var fromRule []interface{}
 			for _, fromItem := range from {
@@ -1880,17 +1880,17 @@ var (
 			}
 			
 
-			logs, sub, err := _Aint-gateway.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
+			logs, sub, err := _AintGateway.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
 			if err != nil {
 				return nil, err
 			}
-			return &Aint-gatewayTransferIterator{contract: _Aint-gateway.contract, event: "Transfer", logs: logs, sub: sub}, nil
+			return &AintGatewayTransferIterator{contract: _AintGateway.contract, event: "Transfer", logs: logs, sub: sub}, nil
  		}
 
 		// WatchTransfer is a free log subscription operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 		//
 		// Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-		func (_Aint-gateway *Aint-gatewayFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *Aint-gatewayTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
+		func (_AintGateway *AintGatewayFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *AintGatewayTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
 			
 			var fromRule []interface{}
 			for _, fromItem := range from {
@@ -1902,7 +1902,7 @@ var (
 			}
 			
 
-			logs, sub, err := _Aint-gateway.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
+			logs, sub, err := _AintGateway.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
 			if err != nil {
 				return nil, err
 			}
@@ -1912,8 +1912,8 @@ var (
 					select {
 					case log := <-logs:
 						// New log arrived, parse the event and forward to the user
-						event := new(Aint-gatewayTransfer)
-						if err := _Aint-gateway.contract.UnpackLog(event, "Transfer", log); err != nil {
+						event := new(AintGatewayTransfer)
+						if err := _AintGateway.contract.UnpackLog(event, "Transfer", log); err != nil {
 							return err
 						}
 						event.Raw = log
@@ -1937,9 +1937,9 @@ var (
 		// ParseTransfer is a log parse operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 		//
 		// Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-		func (_Aint-gateway *Aint-gatewayFilterer) ParseTransfer(log types.Log) (*Aint-gatewayTransfer, error) {
-			event := new(Aint-gatewayTransfer)
-			if err := _Aint-gateway.contract.UnpackLog(event, "Transfer", log); err != nil {
+		func (_AintGateway *AintGatewayFilterer) ParseTransfer(log types.Log) (*AintGatewayTransfer, error) {
+			event := new(AintGatewayTransfer)
+			if err := _AintGateway.contract.UnpackLog(event, "Transfer", log); err != nil {
 				return nil, err
 			}
 			event.Raw = log
