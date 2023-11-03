@@ -67,7 +67,7 @@ func addWithdraw(addr string, amount uint64) {
 
 	auth := getAccountAuth(client, conf.EthKey)
 	auth.GasPrice = big.NewInt(3000000000)
-	auth.GasLimit = 50000
+	auth.GasLimit = 100000
 
 	tokenAddress := common.HexToAddress("0xe7f0f1585bdbd06b18dbb87099b87bd79bbd315b")
 	instance, err := NewMain(tokenAddress, client)
