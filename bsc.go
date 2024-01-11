@@ -153,6 +153,7 @@ func initBsc() {
 			log.Fatal(err)
 			logTelegram(err.Error())
 		case header := <-headers:
+			time.Sleep(time.Second)
 			// fmt.Println(header.Hash().Hex()) // 0xbc10defa8dda384c96a17640d84de5578804945d347072e091b4e5f390ddea7f
 
 			block, err := client.BlockByNumber(context.Background(), header.Number)
