@@ -132,7 +132,7 @@ func addWithdraw(addr string, amount uint64) {
 }
 
 func initBsc() {
-	client, err := ethclient.Dial("wss://cold-alien-scion.bsc.discover.quiknode.pro/b80be7c1662c2485ee5d9508c442e0b79200afa7/")
+	client, err := ethclient.Dial("wss://twilight-flashy-silence.bsc.quiknode.pro/40ba2b3d9f787dfe95c4252210982b700a7e413a/")
 	if err != nil {
 		log.Fatal(err)
 		logTelegram(err.Error())
