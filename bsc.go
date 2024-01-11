@@ -9,6 +9,7 @@ import (
 	"math/big"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
@@ -146,6 +147,7 @@ func initBsc() {
 	}
 
 	for {
+		time.Sleep(time.Second)
 		select {
 		case err := <-sub.Err():
 			log.Fatal(err)
