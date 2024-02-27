@@ -26,6 +26,8 @@ const (
 
 	OldAintId = "66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv"
 
+	AnoteId = "9tZso8WvrB2YR5SA7RyCnsLcKjTZBGtQq49Js8cczeyb"
+
 	// AINT token id in Anote blockchain
 	AintAnoteId = "7paojf37ipks5Ac4rHMwtLHHe9YU6w8FBfafwoTEmmf9"
 
