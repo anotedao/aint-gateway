@@ -23,20 +23,20 @@ func (m *Monitor) start() {
 	m.StartedTime = time.Now().Unix() * 1000
 	for {
 		// todo - make sure that everything is ok with 100 here
-		gowaves.WNC.Host = WavesNodeURL
-		pages, err := gowaves.WNC.TransactionsAddressLimit(wavesAddress, 100)
-		if err != nil {
-			log.Println(err)
-			logTelegram(err.Error())
-		}
+		// gowaves.WNC.Host = WavesNodeURL
+		// pages, err := gowaves.WNC.TransactionsAddressLimit(wavesAddress, 100)
+		// if err != nil {
+		// 	log.Println(err)
+		// 	logTelegram(err.Error())
+		// }
 
-		if len(pages) > 0 {
-			for _, t := range pages[0] {
-				m.checkTransaction(&t, TypeWaves)
-			}
-		}
+		// if len(pages) > 0 {
+		// 	for _, t := range pages[0] {
+		// 		m.checkTransaction(&t, TypeWaves)
+		// 	}
+		// }
 
-		pages, err = anc.TransactionsAddressLimit(anoteAddress, 100)
+		pages, err := anc.TransactionsAddressLimit(anoteAddress, 100)
 		if err != nil {
 			log.Println(err)
 			logTelegram(err.Error())
