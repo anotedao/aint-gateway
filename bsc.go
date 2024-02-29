@@ -60,7 +60,7 @@ func addWithdraw(addr string, amount uint64) {
 	ao := common.HexToAddress(addr)
 	am := big.NewInt(int64(amount))
 
-	client, err := ethclient.Dial("https://endpoints.omniatech.io/v1/bsc/mainnet/public")
+	client, err := ethclient.Dial("wss://twilight-flashy-silence.bsc.quiknode.pro/40ba2b3d9f787dfe95c4252210982b700a7e413a/")
 	if err != nil {
 		log.Fatal(err)
 	}
