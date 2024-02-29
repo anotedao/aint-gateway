@@ -42,9 +42,8 @@ func (m *Monitor) start() {
 			logTelegram(err.Error())
 		}
 
-		log.Println(len(pages))
-
 		if len(pages) > 0 {
+			log.Println(len(pages[0]))
 			for _, t := range pages[0] {
 				m.checkTransaction(&t, TypeAnote)
 			}
