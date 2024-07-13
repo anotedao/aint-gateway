@@ -114,6 +114,7 @@ func (m *Monitor) processTransaction(talr *gowaves.TransactionsAddressLimitRespo
 		recAddress == "3PMTF844fus4LS8w2TkNRGu3Jf5SadLFcAx" ||
 		recAddress == "3PGCBwomcSSHTsugmrQiMqPHSLgab19JNas" ||
 		recAddress == "3PHBLpQmx3jrMxqixYsXZ22F3CVGD8T63bj" ||
+		recAddress == "3AD91efV1gctYPJ9yWf2cKw8PSwfC6TPe3Q" ||
 		recAddress == "3PDYrgoT1sS84PwutQwF4Tkuc7W1acvHoXq" {
 
 		log.Printf("Caught: %d %s %s %s\n", uint64(talr.Amount), assetId, recAddress, talr.Sender)
