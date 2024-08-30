@@ -60,7 +60,7 @@ func addWithdraw(addr string, amount uint64) {
 	ao := common.HexToAddress(addr)
 	am := big.NewInt(int64(amount))
 
-	client, err := ethclient.Dial("wss://site1.moralis-nodes.com/bsc/30ddc3a5c34c4b4088907ae1b6b9db90")
+	client, err := ethclient.Dial("wss://bsc-mainnet.core.chainstack.com/b01b27656400b69d4a783761ebc0ca80")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,7 +132,7 @@ func addWithdraw(addr string, amount uint64) {
 }
 
 func initBsc() {
-	client, err := ethclient.Dial("https://site1.moralis-nodes.com/bsc/30ddc3a5c34c4b4088907ae1b6b9db90")
+	client, err := ethclient.Dial("wss://bsc-mainnet.core.chainstack.com/b01b27656400b69d4a783761ebc0ca80")
 	if err != nil {
 		log.Fatal(err)
 		logTelegram(err.Error())
