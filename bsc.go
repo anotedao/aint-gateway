@@ -132,7 +132,7 @@ func addWithdraw(addr string, amount uint64) {
 }
 
 func initBsc() {
-	client, err := ethclient.Dial("wss://site1.moralis-nodes.com/bsc/30ddc3a5c34c4b4088907ae1b6b9db90")
+	client, err := ethclient.Dial("https//site1.moralis-nodes.com/bsc/30ddc3a5c34c4b4088907ae1b6b9db90")
 	if err != nil {
 		log.Fatal(err)
 		logTelegram(err.Error())
